@@ -11,4 +11,5 @@ public interface Product {
     public default String getImageURL() {
         return null;
     };
+    public default String getBrand() {return "ACME";};
 }

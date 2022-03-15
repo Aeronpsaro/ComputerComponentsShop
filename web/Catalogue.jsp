@@ -8,14 +8,38 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
-        <h1>Hello World!</h1>
+        <h1>Tienda</h1>
+        <div class="row" style="margin-left: 4em; margin-right: 4em">
         <% for(Product product:catalogue.getProducts()) { %>
-            <div class="container">
-                <jsp:include page="Product.jsp"/>
+            <div class="col-3">
+                <div class="productCard">
+                    <div style="margin: 2em">
+                        <div class="row">
+                            <img src="<%= product.getImageURL() %>"/>
+                        </div>
+                        <div class="row">
+                            <div class="col">
+                                <%=product.getName()%>
+                            </div>
+                            <div class="col" style="text-align: right">
+                                <%=product.getPrice()%>€
+                            </div>
+                        </div>
+                        <div class="row">
+                            <form>
+                                <button type="button" style="float:right">
+                                    Añadir al carrito <image src=""/>
+                                </button>
+                            </form>
+                        </div>
+                    </div>
+                </div>
             </div>
         <% } %>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+        </div>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>
