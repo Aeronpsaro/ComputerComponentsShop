@@ -1,25 +1,41 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package control;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-/**
- *
- * @author Entrar
- */
 @WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
 public class FrontController extends HttpServlet {
-
+    
+    private FrontCommand obtenerComando(HttpServletRequest petición) {
+        FrontCommand f;
+        try {
+            f = (FrontCommand) obtenerClaseComando(petición).newInstance();
+            return f;
+        } catch (InstantiationException | IllegalAccessException ex) {
+            Logger.getLogger(FrontController.class.getName()).log(Level.SEVERE, null, ex);
+            return null;
+        }
+    }
+    
+    private Class obtenerClaseComando(HttpServletRequest petición) {
+        Class resultado;
+        final String comando = "control."+(String)
+                petición.getParameter("comando");
+        try {
+            resultado = Class.forName(comando);
+        }
+        catch(ClassNotFoundException e) {
+            resultado = UnknownCommand.class;
+        }
+        return resultado;
+    }
+    
     /**
      * Processes requests for both HTTP <code>GET</code> and <code>POST</code>
      * methods.
@@ -31,18 +47,9 @@ public class FrontController extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
-        response.setContentType("text/html;charset=UTF-8");
-        try (PrintWriter out = response.getWriter()) {
-            /* TODO output your page here. You may use following sample code. */
-            out.println("<!DOCTYPE html>");
-            out.println("<html>");
-            out.println("<head>");
-            out.println("<title>Servlet FrontController</title>");            
-            out.println("</head>");
-            out.println("<body>");
-            out.println("<h1>Servlet FrontController at " + request.getContextPath() + "</h1>");
-            out.println("</body>");
-            out.println("</html>");
+            FrontCommand command = obtenerComando(request);
+            command.initialize(getServletContext(), request, response);
+            command.process();
         }
     }
 

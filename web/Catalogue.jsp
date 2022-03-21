@@ -31,7 +31,14 @@
                         <div class="row">
                             <form>
                                 <button type="button" style="float:right">
-                                    Añadir al carrito <image src=""/>
+                                    <div class="row gx-0">
+                                        <div class="col-auto d-flex align-items-center justify-content-center">
+                                            Añadir al carrito
+                                        </div>
+                                        <div class="col-auto d-flex align-items-center justify-content-center">
+                                            <image style="width: 2em; height: 2em" src="Assets/CartIcon.png"/>
+                                        </div>
+                                    </div>
                                 </button>
                             </form>
                         </div>
