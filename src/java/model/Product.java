@@ -1,6 +1,7 @@
 package model;
 
 public interface Product {
+    public default int getID() {return 0;};
     public float getPrice();
     public String getName();
     public default int getAmmount() {return 1;};

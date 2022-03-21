@@ -9,8 +9,8 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-@WebServlet(name = "FrontController", urlPatterns = {"/FrontController"})
-public class FrontController extends HttpServlet {
+@WebServlet(name = "FrontServlet", urlPatterns = {"/FrontServlet"})
+public class FrontServlet extends HttpServlet {
     
     private FrontCommand obtenerComando(HttpServletRequest petición) {
         FrontCommand f;
@@ -18,7 +18,7 @@ public class FrontController extends HttpServlet {
             f = (FrontCommand) obtenerClaseComando(petición).newInstance();
             return f;
         } catch (InstantiationException | IllegalAccessException ex) {
-            Logger.getLogger(FrontController.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(FrontServlet.class.getName()).log(Level.SEVERE, null, ex);
             return null;
         }
     }
@@ -51,7 +51,6 @@ public class FrontController extends HttpServlet {
             command.initialize(getServletContext(), request, response);
             command.process();
         }
-    }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">
     /**

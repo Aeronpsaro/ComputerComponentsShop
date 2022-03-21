@@ -7,12 +7,9 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import model.Cart;
 import model.Catalogue;
 
-/**
- *
- * @author Entrar
- */
 public class Initializer extends HttpServlet {
 
     /**
@@ -31,6 +28,7 @@ public class Initializer extends HttpServlet {
         request.setAttribute("catalogue", catalogue);
         RequestDispatcher dispatcher =
         request.getRequestDispatcher("/Catalogue.jsp");
+        request.getSession().setAttribute("cart", new Cart());
         if (dispatcher != null)
             dispatcher.forward(request, response);
     }
