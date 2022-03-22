@@ -24,7 +24,7 @@ public class Conector {
         url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShop\\shopDB.db";
         System.out.println(url);
     }
-
+    //conection
     public void connect() throws ClassNotFoundException{
         try{
 
@@ -52,6 +52,7 @@ public class Conector {
         }
     }
 
+    //product control
     public void addProduct(Product product){
         try {
 
@@ -83,36 +84,13 @@ public class Conector {
 
     }
 
-    public void increaseStock(int id, int q){
+    public void removeProduct(int id){
         try {
-
-            PreparedStatement st = connect.prepareStatement("UPDATE stock SET ammount = ammount + "+ q +" WHERE id = " + id);
+            PreparedStatement st = connect.prepareStatement("delete from stock WHERE id = " + id);
+            st.execute();
+                              st = connect.prepareStatement("delete from products WHERE id = " + id);
             st.execute();
 
-        } catch (SQLException ex) {
-            System.err.println(ex.getMessage());
-        }
-
-
-    }
-
-    public void showProducts(){
-        ResultSet result = null;
-        try {
-            PreparedStatement st = connect.prepareStatement("select * from products");
-            result = st.executeQuery();
-            while (result.next()) {
-                System.out.print("ID: ");
-                System.out.println(result.getInt("id"));
-
-                System.out.print("Nombre: ");
-                System.out.println(result.getString("name"));
-
-                System.out.print("descripcion: ");
-                System.out.println(result.getString("description"));
-
-                System.out.println("=======================");
-            }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
@@ -148,6 +126,96 @@ public class Conector {
         return product;
         
     }
+
+    //Stock control
+    public void increaseStock(int id, int q){
+        try {
+
+            PreparedStatement st = connect.prepareStatement("UPDATE stock SET ammount = ammount + "+ q +" WHERE id = " + id);
+            st.execute();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+
+    }
+
+    public void reduceStock(int id, int q){
+        try {
+
+            PreparedStatement st = connect.prepareStatement("UPDATE stock SET ammount = ammount - "+ q +" WHERE id = " + id);
+            st.execute();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+
+    }
+
+    public int getAmmountByID(int aid){
+        ResultSet result = null;
+        try {
+            PreparedStatement st = connect.prepareStatement("select * from stock where id = " + aid);
+            result = st.executeQuery();
+            while (result.next()) {
+
+                return result.getInt("ammount");
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return -1;
+        
+    }
+
+    //misc
+    public void showProducts(){
+        ResultSet result = null;
+        try {
+            PreparedStatement st = connect.prepareStatement("select * from products");
+            result = st.executeQuery();
+            while (result.next()) {
+                System.out.print("ID: ");
+                System.out.println(result.getInt("id"));
+
+                System.out.print("Nombre: ");
+                System.out.println(result.getString("name"));
+
+                System.out.print("descripcion: ");
+                System.out.println(result.getString("description"));
+
+                System.out.print("Ammount: ");
+                System.out.println(getAmmountByID(result.getInt("id")));
+
+                System.out.println("=======================");
+            }
+
+            
+
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
+    public void clearDB(){
+        try {
+
+            PreparedStatement st = connect.prepareStatement("delete from stock;");
+            st.execute();
+                              st = connect.prepareStatement("delete from products;");
+            st.execute();
+                              st = connect.prepareStatement("DELETE FROM SQLITE_SEQUENCE WHERE name='products';");
+            st.execute();   
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
 
 
 }
