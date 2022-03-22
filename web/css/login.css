@@ -1,0 +1,27 @@
+#login{
+    background-color: cornflowerblue;
+    display: flex;
+    flex-direction: column;
+    width: 300px;
+    padding-left: 50px;
+    padding-right: 50px;
+    margin-left: 35%;
+    padding-top: 30px;
+    padding-bottom: 50px;  
+}
+
+h1{
+    margin-left: 46%;
+}
+
+input{
+    margin-top: 20px;
+}
+
+#botonIniciarSesion{
+    width: 100px;
+}
+
+#buscar{
+display: none;
+}

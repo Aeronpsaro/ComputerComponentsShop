@@ -1,0 +1,41 @@
+header{
+    width: 100%;
+    background-color: rgb(51, 138, 149);
+    padding-left: 0px;
+    margin-top: 0px;
+}
+
+#encabezado{
+    list-style-type: none;
+    display: flex;
+    padding-left: 0px;
+    margin-top: 0px;
+    align-items: center;
+}
+
+#fotologo{
+    margin-top: 3px;
+    margin-left: 20px;
+}
+
+#buscar{
+    margin-left: 50px;
+}
+
+#buscador{
+    display: flex;
+    margin-left: 200px;
+    align-items: center;
+}
+
+.vinculo{
+    margin-right: 100px;
+}
+
+main{
+    background-color: rgb(131, 165, 194);
+    height: 600px;
+    margin-top: -20px;
+    padding-top: 10px;
+}
+
