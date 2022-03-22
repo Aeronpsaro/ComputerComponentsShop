@@ -34,8 +34,9 @@ header{
 
 main{
     background-color: rgb(131, 165, 194);
-    height: 600px;
+    height: auto;
     margin-top: -20px;
     padding-top: 10px;
+    padding-bottom: 100px;
 }
 
