@@ -4,6 +4,7 @@ import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
 
@@ -171,6 +172,32 @@ public class Conector {
         
     }
 
+    //orders 
+    public void addOrder(int user_id, int[] items){
+        try {
+
+
+            PreparedStatement st = connect.prepareStatement("insert into orders (items, user_id) values (?,?)");
+            st.setString(1, Arrays.toString(items));
+            st.setInt(2, user_id);
+            st.execute();
+
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+
+    }
+
+    public void removeOrder(int id){
+        try {
+            PreparedStatement st = connect.prepareStatement("delete from orders WHERE id = " + id);
+            st.execute();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+    }
+
     //misc
     public void showProducts(){
         ResultSet result = null;
@@ -208,7 +235,9 @@ public class Conector {
             st.execute();
                               st = connect.prepareStatement("delete from products;");
             st.execute();
-                              st = connect.prepareStatement("DELETE FROM SQLITE_SEQUENCE WHERE name='products';");
+                              st = connect.prepareStatement("delete from orders;");
+            st.execute();
+                              st = connect.prepareStatement("DELETE FROM SQLITE_SEQUENCE;");
             st.execute();   
 
         } catch (SQLException ex) {
