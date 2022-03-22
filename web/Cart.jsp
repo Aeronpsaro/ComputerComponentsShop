@@ -21,10 +21,10 @@
                     <%=product.getName() %>
                 </div>
                 <div class="col">
-                    <%=String.format("%. 2f", product.getPrice()) %>
+                    <%=String.format("%.2f", product.getPrice()) %>
                 </div>
                 <div class="col">
-                    
+                    <%=cart.getAmmounts().get(product) %>
                 </div>
             </div>
         <% } %>

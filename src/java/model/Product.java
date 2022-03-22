@@ -13,4 +13,5 @@ public interface Product {
         return null;
     };
     public default String getBrand() {return "ACME";};
+    public default int getRating() {return 0;};
 }

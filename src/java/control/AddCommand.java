@@ -14,9 +14,9 @@ public class AddCommand extends FrontCommand {
     
     @Override
     public void process() throws ServletException, IOException {
-        Product product = (Product) request.getAttribute("product");
+        Product product = getProduct(Integer.parseInt(request.getParameter("product")));
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         cart.add(product);
-        redirect("Cart.jsp");
+        redirect("/Cart.jsp");
     }
 }

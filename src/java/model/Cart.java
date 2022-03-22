@@ -12,10 +12,10 @@ public class Cart {
     
     public void add(Product product) {
         if (ammounts.containsKey(product)) {
-            ammounts.put(product, 1);
+            ammounts.put(product, ammounts.get(product)+1);
             return;
         }
-        ammounts.put(product, ammounts.get(product)+1);
+        ammounts.put(product, 1);
     }
     
     public void remove(Product product) {

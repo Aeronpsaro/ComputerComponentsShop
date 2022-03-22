@@ -12,10 +12,10 @@ import javax.servlet.http.HttpServletResponse;
 @WebServlet(name = "FrontServlet", urlPatterns = {"/FrontServlet"})
 public class FrontServlet extends HttpServlet {
     
-    private FrontCommand obtenerComando(HttpServletRequest petición) {
+    private FrontCommand obtenerComando(HttpServletRequest request) {
         FrontCommand f;
         try {
-            f = (FrontCommand) obtenerClaseComando(petición).newInstance();
+            f = (FrontCommand) obtenerClaseComando(request).newInstance();
             return f;
         } catch (InstantiationException | IllegalAccessException ex) {
             Logger.getLogger(FrontServlet.class.getName()).log(Level.SEVERE, null, ex);
@@ -23,17 +23,17 @@ public class FrontServlet extends HttpServlet {
         }
     }
     
-    private Class obtenerClaseComando(HttpServletRequest petición) {
-        Class resultado;
+    private Class obtenerClaseComando(HttpServletRequest request) {
+        Class result;
         final String comando = "control."+(String)
-                petición.getParameter("comando");
+                request.getParameter("command");
         try {
-            resultado = Class.forName(comando);
+            result = Class.forName(comando);
         }
         catch(ClassNotFoundException e) {
-            resultado = UnknownCommand.class;
+            result = UnknownCommand.class;
         }
-        return resultado;
+        return result;
     }
     
     /**

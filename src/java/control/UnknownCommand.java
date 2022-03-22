@@ -6,6 +6,6 @@ import javax.servlet.ServletException;
 public class UnknownCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
-        redirect("");
+        redirect("/Error.jsp");
     }
 }
