@@ -1,0 +1,14 @@
+#filtros{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(51, 138, 149);
+    padding-right: 50px;
+    padding-bottom: 20px;
+    width: 150px;
+    margin-top: 20px;
+}
+
+.input{
+    margin-top: 20px;
+}
+
