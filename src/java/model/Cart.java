@@ -34,4 +34,8 @@ public class Cart {
         return ammounts;
     }
     
+    public void setAmmount(Product product, int ammount) {
+        ammounts.put(product, ammount);
+    }
+    
 }
