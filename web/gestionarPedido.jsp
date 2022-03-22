@@ -1,17 +1,17 @@
 <%-- 
-    Document   : index
-    Created on : 22 mar. 2022, 13:15:40
+    Document   : gestionarPedido
+    Created on : 22 mar. 2022, 14:12:51
     Author     : alber
 --%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
-<!DOCTYPE html>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
         <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/gestionarPedido.css">
     </head>
     <body>
         <header>
@@ -26,7 +26,10 @@
         </header>
         
         <main>
-        <h1>Catálogo</h1>
+        <h1>ID del Pedido</h1>
+        <article>
+            
+        </article>
         </main>
     </body>
 </html>

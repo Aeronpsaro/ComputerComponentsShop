@@ -10,11 +10,11 @@
     font-size: small;
     text-align: right;
 
-    margin-left: 55%;
+    margin-left: 45%;
 }
 
 #cantidadTitulo{
-    margin-right: 250px;
+    margin-right: 150px;
 }
 
 .producto{
@@ -49,7 +49,7 @@ h2{
 
 #preciototal{
    display: flex;
-   
+   justify-content: center; 
 }
 
 #botonPedido{
