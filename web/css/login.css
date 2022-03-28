@@ -19,9 +19,14 @@ input{
 }
 
 #botonIniciarSesion{
-    width: 100px;
+    
+    background-color: rgb(40, 70, 206);
+    color: white;
+    font-size: 18px;
+    border-radius: 12px;
 }
 
 #buscar{
 display: none;
 }
+

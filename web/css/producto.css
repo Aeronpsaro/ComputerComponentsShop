@@ -1,0 +1,35 @@
+article{
+    display: flex;
+    width: 90%;
+    margin-left: 50px;
+  
+    height: auto;
+}
+
+#caja1{
+    flex-basis: 300px;
+
+    height: auto;
+}
+
+#caja2{
+    flex-basis: 70%;
+ 
+    margin-left: 20px;
+    height: auto;
+}
+
+#botonAñadirCarrito{
+    float: right;
+    margin-right: 50px;
+}
+
+
+
+#infoproducto{
+    display: flex;
+    font-size: large;
+    justify-content: space-between;
+    margin-left: 30px;
+    margin-right: 30px;
+}

@@ -16,7 +16,7 @@
     <body>
         <header>
             <ul id="encabezado">
-                <li id="fotologo"><a><img src="img\logo.jpeg" alt="menu" height="80px"></a></li>
+                <li id="fotologo"><a href="index.jsp"><img src="img\logo.jpeg" alt="menu" height="80px"></a></li>
                 <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" value="Buscar"></form></li>
                 <nav id="buscador">
                     <li><a class="vinculo" href="index.jsp" style="color: white"> Home</a></li>
