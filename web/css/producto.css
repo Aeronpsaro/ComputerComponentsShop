@@ -2,7 +2,6 @@ article{
     display: flex;
     width: 90%;
     margin-left: 50px;
-  
     height: auto;
 }
 
@@ -14,7 +13,6 @@ article{
 
 #caja2{
     flex-basis: 70%;
- 
     margin-left: 20px;
     height: auto;
 }
