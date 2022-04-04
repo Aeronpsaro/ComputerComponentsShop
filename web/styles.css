@@ -7,16 +7,17 @@ body {
 button {
     border:none;
     border-radius: 0.5em;
-    background-color:lightblue;
+    background-color: #ADFFE6;
 }
 
 button:hover {
     box-shadow: 0 0 0.25rem black;
 }
 
+
 .productCard {
     border-radius: 1em;
-    background-color: white;
+    background-color: rgb(171, 205, 244);
     cursor: pointer;
 }
 

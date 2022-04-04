@@ -1,17 +1,16 @@
-<%-- 
-    Document   : carrito
-    Created on : 22 mar. 2022, 13:18:41
-    Author     : alber
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
+<%@page import="model.Product"%>
+<%@page import="model.Cart"%>
 <!DOCTYPE html>
+<% Cart cart = (Cart)request.getSession().getAttribute("cart"); %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Computer Components Shop</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/carrito.css">
+        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <header>
@@ -32,95 +31,21 @@
                 <h2 id="precio">PRECIO</h2>
             </section>
             
+            <% for(Product product:cart.getAmmounts().keySet()) { %>
             <section id="productoscarrito">
                 <ul class="producto">
-                    <li>imagenProducto</li>    
-                    <li>Producto1</li>
+                    <li><img src="<%=product.getImageURL() %>" width="100px" height="100px"/></li>    
+                    <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
-                        <select name="cantidad">
-                
-                          <option value="1">1</option>
-                
-                          <option value="2">2</option>
-                
-                          <option value="3">3</option>
-                
-                          <option value="4">4</option>
-                
-                          <option value="5">5</option>
-                
-                        </select>
+                        <%=cart.getAmmounts().get(product) %>
                       </div></li>
-                    <li>0.00€</li>
+                    <li><%=String.format("%.2f", product.getPrice()) %>€</li>
                     <li><a> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px"></a></li>
                 </ul>
 
-                <ul class="producto">
-                    <li>imagenProducto</li>    
-                    <li>Producto2</li>
-                    <li> <div class="cantidad">
-                        <select name="cantidad">
-                
-                          <option value="1">1</option>
-                
-                          <option value="2">2</option>
-                
-                          <option value="3">3</option>
-                
-                          <option value="4">4</option>
-                
-                          <option value="5">5</option>
-                
-                        </select>
-                      </div></li>
-                    <li>0.00€</li>
-                    <li><a> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px"></a></li>
-                </ul>
-
-                <ul class="producto">
-                    <li>imagenProducto</li>    
-                    <li>Producto3</li>
-                    <li> <div class="cantidad">
-                        <select name="cantidad">
-                
-                          <option value="1">1</option>
-                
-                          <option value="2">2</option>
-                
-                          <option value="3">3</option>
-                
-                          <option value="4">4</option>
-                
-                          <option value="5">5</option>
-                
-                        </select>
-                      </div></li>
-                    <li>0.00€</li>
-                    <li><a> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px"></a></li>
-                </ul>
-
-                <ul class="producto">
-                    <li>imagenProducto</li>    
-                    <li>Producto4</li>
-                    <li> <div class="cantidad">
-                        <select name="cantidad">
-                
-                          <option value="1">1</option>
-                
-                          <option value="2">2</option>
-                
-                          <option value="3">3</option>
-                
-                          <option value="4">4</option>
-                
-                          <option value="5">5</option>
-                
-                        </select>
-                      </div></li>
-                    <li>0.00€</li>
-                    <li><img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px"> </li>
-                </ul>
+             
             </section>
+             <% } %>
 
             <div id="cajafinal">
 
@@ -136,5 +61,6 @@
     
         </article>
         </main>
+             <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
     </body>
 </html>

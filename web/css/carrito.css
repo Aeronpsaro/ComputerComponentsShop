@@ -1,7 +1,6 @@
 #carrito{
     width: 95%;
     height: 400px;
-    background-color: rgb(255, 187, 97);
     margin-left: 20px;
 }
 
@@ -15,6 +14,7 @@
 
 #cantidadTitulo{
     margin-right: 150px;
+    border:solid;
 }
 
 .producto{
