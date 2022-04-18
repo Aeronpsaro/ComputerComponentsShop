@@ -40,7 +40,15 @@
                         <%=cart.getAmmounts().get(product) %>
                       </div></li>
                     <li><%=String.format("%.2f", product.getPrice()) %>€</li>
-                    <li><a> <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px"></a></li>
+                    <li>
+                        <form action="FrontServlet" method="POST">
+                            <input type="hidden" name="command" value="RemoveCommand">
+                            <input type="hidden" name="product" value="<%=product.getID()%>">
+                            <input type="submit">
+                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
+                            </input>
+                        </form>
+                    </li>
                 </ul>
 
              
