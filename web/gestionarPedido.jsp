@@ -21,7 +21,7 @@
                 <nav id="buscador">
                     <li><a class="vinculo" href="index.jsp" style="color: white"> Home</a></li>
                     <li><a class="vinculo" href="login.jsp" style="color: white"> Login</a></li>
-                    <li id="carro"><a class="vinculo" href="carrito.jsp" style="color: white"><img src="img\carro.jpg" alt="menu" height="30px"></a></li>                </nav>
+                    <li id="carro"><a class="vinculo" href="Cart.jsp" style="color: white"><img src="img\carro.jpg" alt="menu" height="30px"></a></li>                </nav>
             </ul>
         </header>
         

@@ -8,13 +8,10 @@
     display: flex;
     font-size: small;
     text-align: right;
-
     margin-left: 45%;
 }
-
 #cantidadTitulo{
     margin-right: 150px;
-    border:solid;
 }
 
 .producto{
@@ -25,8 +22,6 @@
     margin-left: 10px;
 }
 
-
-
 h2{
     font-size: medium;
 }
@@ -35,9 +30,7 @@ h2{
     margin-left: 20px;
 }
 
-
-
-#cajafinal{
+#Precioyboton{
     height: 100px;
     width: 200px;
     display: flex;
