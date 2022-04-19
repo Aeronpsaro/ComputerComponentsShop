@@ -1,7 +1,7 @@
 <header>
     <ul id="encabezado">
         <li id="fotologo"><a href="Catalogue.jsp"><img src="img\logo.jpeg" alt="menu" height="80px"></a></li>
-        <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" value="Buscar"></form></li>
+        <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" placeholder="Buscar"></form></li>
         <nav id="buscador">
         <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Home</a></li>
         <li><a class="vinculo" href="login.jsp" style="color: white"> Login</a></li>
