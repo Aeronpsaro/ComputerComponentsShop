@@ -62,3 +62,7 @@ button{
     font-size: 17px;
     border-radius: 12px;
 }
+
+.deleteProduct:hover {
+    cursor:pointer;
+}
