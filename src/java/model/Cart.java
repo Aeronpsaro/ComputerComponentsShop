@@ -21,6 +21,10 @@ public class Cart {
     public void remove(Product product) {
         ammounts.remove(product);
     }
+    
+    public void setProductAmmount(Product product, int ammount) {
+        ammounts.put(product, ammount);
+    }
             
     public float getPrice() {
         float totalPrice = 0;
