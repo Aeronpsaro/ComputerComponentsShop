@@ -18,9 +18,9 @@
                 <li id="fotologo"><a href="index.jsp"><img src="img\logo.jpeg" alt="menu" height="80px"></a></li>
                 <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" value="Buscar"></form></li>
                 <nav id="buscador">
-                    <li><a class="vinculo" href="index.jsp" style="color: white"> Home</a></li>
+                    <li><a class="vinculo" href="/Catalogue.jsp" style="color: white"> Home</a></li>
                     <li><a class="vinculo" href="login.jsp" style="color: white"> Login</a></li>
-                    <li id="carro"><a class="vinculo" href="carrito.jsp" style="color: white"><img src="img\carro.jpg" alt="menu" height="30px"></a></li>                </nav>
+                    <li id="carro"><a class="vinculo" href="Cart.jsp" style="color: white"><img src="img\carro.jpg" alt="menu" height="30px"></a></li>                </nav>
             </ul>
         </header>
         
@@ -41,12 +41,10 @@
                       </div></li>
                     <li><%=String.format("%.2f", product.getPrice()) %>€</li>
                     <li>
-                        <form action="FrontServlet" method="POST">
+                        <form action="FrontServlet" method="POST" onclick="submit()">
                             <input type="hidden" name="command" value="RemoveCommand">
                             <input type="hidden" name="product" value="<%=product.getID()%>">
-                            <input type="submit">
-                                <img src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
-                            </input>
+                            <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
                         </form>
                     </li>
                 </ul>
