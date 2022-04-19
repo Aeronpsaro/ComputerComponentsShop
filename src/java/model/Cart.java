@@ -19,7 +19,7 @@ public class Cart {
     }
     
     public void remove(Product product) {
-        if (ammounts.containsKey(product)) ammounts.put(product, ammounts.get(product)-1);
+        ammounts.remove(product);
     }
             
     public float getPrice() {

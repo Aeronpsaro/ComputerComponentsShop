@@ -4,9 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Catalogue {
+    private static final Catalogue INSTANCE = new Catalogue();
+    
     private final List<Product> products;
     
-    public Catalogue() {
+    private Catalogue() {
         products = new ArrayList();
     }
     
@@ -18,5 +20,9 @@ public class Catalogue {
         for (int i=0; i<20; i++) {
             products.add(new TestProduct());
         }
+    }
+    
+    public static Catalogue getCatalogue() {
+        return INSTANCE;
     }
 }
