@@ -25,12 +25,16 @@ public class Initializer extends HttpServlet {
             throws ServletException, IOException {
         Catalogue catalogue = new Catalogue();
         catalogue.testInitialize();
-        request.setAttribute("catalogue", catalogue);
-        RequestDispatcher dispatcher =
-        request.getRequestDispatcher("/Catalogue.jsp");
+        //catalogue.testInitializeDB();
+
+        request.getSession().setAttribute("catalogue", catalogue);
         request.getSession().setAttribute("cart", new Cart());
-        if (dispatcher != null)
-            dispatcher.forward(request, response);
+
+
+
+        RequestDispatcher dp = request.getServletContext().getRequestDispatcher("/Catalogue.jsp");
+        if (dp != null)
+            dp.forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

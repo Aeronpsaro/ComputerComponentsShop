@@ -4,8 +4,12 @@ import java.util.Objects;
 
 public class TestProduct implements Product {
 
+    public void setId(int id) {
+        return;
+    }
+
     @Override
-    public float getPrice() {
+    public double getPrice() {
         return 10;
     }
 
@@ -15,13 +19,13 @@ public class TestProduct implements Product {
     }
 
     @Override
-    public String getImageURL() {
+    public String getImage() {
         return "https://m.media-amazon.com/images/I/61eIVXuxyAS._AC_SY355_.jpg";
     }
     
     @Override
     public int hashCode() {
-        return Objects.hash(getPrice(), getName(), getImageURL());
+        return Objects.hash(getPrice(), getName(), getImage());
     }
 
     @Override
@@ -37,5 +41,9 @@ public class TestProduct implements Product {
         }
         final TestProduct other = (TestProduct) obj;
         return true;
+    }
+
+    public void setAmmount(int ammount) {
+        return;
     }
 }
