@@ -21,7 +21,7 @@ public class TestProduct implements Product {
     
     @Override
     public int hashCode() {
-        return Objects.hash(getPrice(), getName(), getImageURL());
+        return getID();
     }
 
     @Override
@@ -36,6 +36,6 @@ public class TestProduct implements Product {
             return false;
         }
         final TestProduct other = (TestProduct) obj;
-        return true;
+        return getID()==other.getID();
     }
 }
