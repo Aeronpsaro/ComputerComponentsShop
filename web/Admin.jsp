@@ -25,9 +25,9 @@
         <h1>Página del Administrador</h1>
         
         <ul id="menuAdmin">
-            <li class="botonesAdmin"><button type="button">Inventario</button></li>
-            <li class="botonesAdmin"><button type="button">Pedidos</button></li>
-            <li class="botonesAdmin"><button type="button">Usuarios</button></li>
+            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Stock.jsp'">Inventario</button></li>
+            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Orders.jsp'">Pedidos</button></li>
+            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Users.jsp'">Usuarios</button></li>
         </ul>
 
     </main>

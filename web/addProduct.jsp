@@ -13,7 +13,8 @@
         <title>Añadir Producto</title>
         <link rel="stylesheet" href="css/catalogue.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/añadirproducto.css">
+        <link rel="stylesheet" href="css/addproduct.css">
+        <link rel="stylesheet" href="css/flechaboton.css">
     </head>
     <body>
         <jsp:include page="header.jsp"/>
@@ -34,15 +35,15 @@
                     <section>
                         <form id="formulario" action="" method="post">
                             <ul class="relleno">
-                                <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto">
-                                <select class="formulario" id="tipoproducto" name="text">
+                                <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto" required>
+                                <select class="formulario" id="tipoproducto" name="text" required="">
                                     <option>Teclados</option>
                                     <option>Ratones</option>
                                     <option>Pantallas</option>
                                 </select>
-                                <input class="formulario" id="precioProducto" type="text" placeholder="Precio" name="precioproducto">
-                                <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto">
-                                <input class ="formulario" type="file" name="foto" size="10">
+                                <input class="formulario" id="precioProducto" type="text" placeholder="Precio" name="precioproducto" required>
+                                <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto" required>
+                                <input class ="formulario" type="file" name="foto" size="10" required>
                             </ul>
                         <input id="botonAñadirProducto" type="submit" value="Añadir producto">
                     </section>
@@ -50,6 +51,13 @@
                     </form>
                 
             </article>
+            
+            <div id="flechayboton">
+                <a href="#" class="volver" onclick="window.location.href='Stock.jsp'" >
+                    <div>
+                        <span></span>
+                    </div>
+                </a>
             
         </main>
     </body>
