@@ -52,15 +52,16 @@
              <% } %>
 
             <div id="Precioyboton">
-
-              <section id="preciototal">
+                <section id="preciototal">
                 <h2>Precio Total</h2>
                 <p id="pTotal">0.00€</p>
-              </section>
-              <div id="botonPedido">
-                <button>Hacer Pedido</button>
-              </div>
-
+                </section>
+                <form action="FrontServlet">
+                    <input type="hidden" name="command" value="OrderCommand">
+                    <div id="botonPedido">
+                      <button>Hacer Pedido</button>
+                    </div>
+                </form>
             </div>
     
         </article>
