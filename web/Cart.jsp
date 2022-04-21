@@ -27,11 +27,15 @@
                     <li><img src="<%=product.getImage() %>" width="120px" height="100px"/></li>    
                     <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
-                        <select name="cantidad">
-                            <% for (int i=1;i<100;i++){%>
-                                <option><%=i%></option>
-                            <%}%>
-                        </select>
+                        <form action="FrontServlet" method="POST" onchange="submit()">
+                            <input type="hidden" name="command" value="SetAmmountCommand">
+                            <input type="hidden" name="product" value="<%=product.getID()%>">
+                            <select name="cantidad">
+                                <% for (int i=1;i<=Integer.max(cart.getAmmounts().get(product),99);i++){%>
+                                <option <%if (i==cart.getAmmounts().get(product)) {%>selected<%}%>><%=i%></option>
+                                <%}%>
+                            </select>
+                        </form>
                       </div></li>
                     <li><%=String.format("%.2f", product.getPrice()) %>€</li>
                     <li>
