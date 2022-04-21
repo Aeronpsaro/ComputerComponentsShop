@@ -28,9 +28,9 @@
                     <div style="margin: 2em;">
                         <form onclick="submit()" action="FrontServlet" method="POST">
                             <input type="hidden" name="command" value="SeeProductCommand"/>
-                            <input type="hidden" name="product" value="<%=product.getID()%>"/>
+                            <input type="hidden" name="product" value="<%=product.getId()%>"/>
                             <div class="row">
-                                <img src="<%= product.getImageURL() %>"/>
+                                <img src="<%= product.getImage() %>"/>
                             </div>
                             <div class="row">
                                 <div class="col">
@@ -44,7 +44,7 @@
                         <div class="row">
                             <form action="FrontServlet" method="POST">
                                 <input type="hidden" name="command" value="AddCommand">
-                                <input type="hidden" name="product" value="<%=product.getID()%>">
+                                <input type="hidden" name="product" value="<%=product.getId()%>">
                                 <button type="submit" style="float:right">
                                     <div class="row gx-0">
                                         <div class="col-auto d-flex align-items-center justify-content-center">

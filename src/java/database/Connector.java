@@ -1,12 +1,16 @@
+package database;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.*;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.GenericProduct;
+import model.Product;
 
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
@@ -17,39 +21,49 @@ import java.util.logging.Logger;
  *
  * @author Usuario
  */
-public class Conector {
-    String url;
-    Connection connect;
+public class Connector {
+    private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
+    //private static String url = "shopDB.db";
+    private static final Connection connect;
 
-    public Conector() {
-        url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShop\\shopDB.db";
-        System.out.println(url);
+    private static final Connector INSTANCE;
+
+    public static Connector getConector() {
+        return INSTANCE;
     }
-    //conection
-    public void connect() throws ClassNotFoundException{
-        try{
 
-            try {
-              Class.forName("org.sqlite.JDBC").newInstance();
-            } catch (Exception ex) {
-              System.err.println("no se pudo cargar jbdc");
-            }
 
-            connect = DriverManager.getConnection("JDBC:sqlite:" + url);
-            if (connect != null) {
-                System.out.println("conectado");
-            }
-        }catch(SQLException ex) {
-            System.err.println("no se ha podido conectar a la base de datos" + ex.getMessage());
+    static{
+        
+        try {
+          Class.forName("org.sqlite.JDBC").newInstance();
+        } catch (Exception ex) {
+          System.err.println("no se pudo cargar jbdc"+ ex);
         }
+        try{
+            connect = DriverManager.getConnection("JDBC:sqlite:" + url);
+        }catch(SQLException ex) {
+            connect = null;
+            System.out.println("conexion fallida");
+        }
+
+        if (connect != null) {
+            System.out.println("conectado");
+        }
+
+        INSTANCE = new Connector();
+        
     }
+
+    //conection
+    
 
     public void close(){
         try {
             connect.close();
             System.out.println("cerrado");
         } catch (SQLException ex) {
-            Logger.getLogger(Conector.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
 
@@ -58,13 +72,14 @@ public class Conector {
         try {
 
 
-            PreparedStatement st = connect.prepareStatement("insert into products (name, description, score, image, price, type) values (?,?,?,?,?,?)");
+            PreparedStatement st = connect.prepareStatement("insert into products (name, description, score, image, price, type, brand) values (?,?,?,?,?,?,?)");
             st.setString(1, product.getName());
             st.setString(2, product.getDescription());
             st.setDouble(3, product.getScore());
             st.setString(4, product.getImage());
             st.setDouble(5, product.getPrice());
-            st.setString(6, product.getType());
+            st.setString(6, product.getType().getSimpleName());
+            st.setString(6, product.getBrand());
             st.execute();
 
 
@@ -97,9 +112,43 @@ public class Conector {
         }
     }
 
+    public List<Product> getProducts(){
+        ResultSet result = null;
+        Product productAux= null;
+        List<Product> products= new ArrayList<>();
+        try {
+            PreparedStatement st = connect.prepareStatement("select * from products");
+            result = st.executeQuery();
+            while (result.next()) {
+
+                int id = result.getInt("id");
+
+                String name = result.getString("name");
+
+                String description = result.getString("description");
+
+                String image = result.getString("image");
+
+                double price = result.getDouble("price");
+
+                String brand = result.getString("brand");
+
+                productAux = new GenericProduct(name, description, image, price, brand);
+                productAux.setId(id);
+                products.add(productAux);
+
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return products;
+        
+    }
+
     public Product getProductByID(int aid){
         ResultSet result = null;
-        Product product = null;
+        GenericProduct product = null;
         try {
             PreparedStatement st = connect.prepareStatement("select * from products where id = " + aid);
             result = st.executeQuery();
@@ -113,11 +162,11 @@ public class Conector {
 
                 String image = result.getString("image");
 
-                String type = result.getString("price");
+                double price = result.getDouble("price");
 
-                double price = result.getDouble("type");
+                String brand = result.getString("brand");
 
-                product = new Product(name, description, image, type, price);
+                product = new GenericProduct(name, description, image, price, brand);
                 product.setId(id);
             }
         } catch (SQLException ex) {
@@ -248,6 +297,7 @@ public class Conector {
 
 
 }
+
 
 
 

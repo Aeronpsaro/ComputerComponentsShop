@@ -24,7 +24,7 @@
             <% for(Product product:cart.getAmmounts().keySet()) { %>
             <section id="productoscarrito">
                 <ul class="producto">
-                    <li><img src="<%=product.getImageURL() %>" width="120px" height="100px"/></li>    
+                    <li><img src="<%=product.getImage() %>" width="120px" height="100px"/></li>    
                     <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
                         <select name="cantidad">
@@ -37,7 +37,7 @@
                     <li>
                         <form action="FrontServlet" method="POST" onclick="submit()">
                             <input type="hidden" name="command" value="RemoveCommand">
-                            <input type="hidden" name="product" value="<%=product.getID()%>">
+                            <input type="hidden" name="product" value="<%=product.getId()%>">
                             <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
                         </form>
                     </li>
