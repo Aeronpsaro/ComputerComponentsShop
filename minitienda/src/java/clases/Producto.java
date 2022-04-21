@@ -1,31 +1,16 @@
 package clases;
-public class Producto {
- private int clave;
- private String nombre;
- private Double precio;
- private int cantidad;
-
- public Producto(int clave, String nombre,
- Double precio,int cant){
- this.clave = clave;
- this.nombre = nombre;
- this.precio = precio;
- this.cantidad = cant;
- }
-
- public int getClave(){
- return clave;
- }
-
- public String getNombre(){
- return nombre;
- }
-
- public Double getPrecio(){
- return precio;
- }
-
- public int getCantidad(){
- return cantidad;
- }
+public interface Producto {
+    public default int getID() {return 0;};
+    public float getPrice();
+    public String getName();
+    public default int getAmmount() {return 1;};
+    public default String getDescription() {return "";};
+    public default Class getType() {
+        return this.getClass();
+    };
+    public default String getImageURL() {
+        return null;
+    };
+    public default String getBrand() {return "ACME";};
+    public default int getRating() {return 0;};
 }
