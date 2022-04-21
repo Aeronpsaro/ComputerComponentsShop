@@ -1,5 +1,7 @@
 package model;
 
+import java.util.Objects;
+
 public class GenericProduct implements Product {
 
     int id;
@@ -37,7 +39,7 @@ public class GenericProduct implements Product {
         return ammount;
     }
 
-    public int getId() {
+    public int getID() {
         return id;
     }
 
@@ -49,7 +51,7 @@ public class GenericProduct implements Product {
         return description;
     }
 
-    public String getImage() {
+    public String getImageURL() {
         return image;
     }
 
@@ -65,6 +67,25 @@ public class GenericProduct implements Product {
         return brand;
     }
 
+    @Override
+    public int hashCode() {
+        return Objects.hash(getPrice(), getName(), getImageURL());
+    }
+
+    @Override
+    public boolean equals(Object obj) {
+        if (this == obj) {
+            return true;
+        }
+        if (obj == null) {
+            return false;
+        }
+        if (getClass() != obj.getClass()) {
+            return false;
+        }
+        final TestProduct other = (TestProduct) obj;
+        return true;
+    }
 
 
 }

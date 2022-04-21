@@ -58,14 +58,14 @@ public class Connector {
     //conection
     
 
-    public void close(){
+    /*public void close(){
         try {
             connect.close();
             System.out.println("cerrado");
         } catch (SQLException ex) {
             Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }
+    }*/
 
     //product control
     public void addProduct(Product product){
@@ -76,7 +76,7 @@ public class Connector {
             st.setString(1, product.getName());
             st.setString(2, product.getDescription());
             st.setDouble(3, product.getScore());
-            st.setString(4, product.getImage());
+            st.setString(4, product.getImageURL());
             st.setDouble(5, product.getPrice());
             st.setString(6, product.getType().getSimpleName());
             st.setString(6, product.getBrand());
@@ -89,7 +89,7 @@ public class Connector {
             product.setId(result.getInt(1));
 
             PreparedStatement st2 = connect.prepareStatement("insert into stock (id, ammount) values (?,?)");
-            st2.setInt(1, product.getId());
+            st2.setInt(1, product.getID());
             st2.setInt(2, 0);
             st2.execute();
 

@@ -23,7 +23,7 @@ public class Catalogue {
         products.addAll(con.getProducts());
         
 
-        con.close();
+        //con.close();
 
         /*for (int i=0; i<20; i++) {
             products.add(new GenericProduct("caja", "es una caja", "https://m.media-amazon.com/images/I/61eIVXuxyAS._AC_SY355_.jpg", 20.0, "caja acme"));
@@ -34,7 +34,7 @@ public class Catalogue {
         List<GenericProduct> productsAux = new ArrayList<>();
 
         for (int i=0; i<20; i++) {
-            productsAux.add(new GenericProduct("caja", "es una caja", "https://m.media-amazon.com/images/I/61eIVXuxyAS._AC_SY355_.jpg", 20.0, "caja acme"));
+            productsAux.add(new GenericProduct("caja"+i, "es una caja", "https://m.media-amazon.com/images/I/61eIVXuxyAS._AC_SY355_.jpg", 20.0, "caja acme"));
         }
 
         con.clearDB();
@@ -42,7 +42,7 @@ public class Catalogue {
             con.addProduct((GenericProduct)p);
         }
         con.showProducts();
-        con.close();
+        //con.close();
     }    
 
 

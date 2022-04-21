@@ -20,11 +20,16 @@
                 <h2 id="cantidadTitulo">CANTIDAD</h2>
                 <h2 id="precio">PRECIO</h2>
             </section>
-            
+            <% System.out.println("hola1"); %>
             <% for(Product product:cart.getAmmounts().keySet()) { %>
+            <% System.out.println("hola2"); %>
             <section id="productoscarrito">
                 <ul class="producto">
-                    <li><img src="<%=product.getImage() %>" width="120px" height="100px"/></li>    
+                    <% System.out.println("hola25"); %>
+                   
+                    
+                    <li><img src="<%=product.getImageURL() %>" width="120px" height="100px"/></li>
+                    <% System.out.println("hola3"); %>
                     <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
                         <form action="FrontServlet" method="POST" onchange="submit()">
@@ -32,6 +37,7 @@
                             <input type="hidden" name="product" value="<%=product.getID()%>">
                             <select name="cantidad">
                                 <% for (int i=1;i<=Integer.max(cart.getAmmounts().get(product),99);i++){%>
+                                <% System.out.println("hola4"); %>
                                 <option <%if (i==cart.getAmmounts().get(product)) {%>selected<%}%>><%=i%></option>
                                 <%}%>
                             </select>
@@ -41,7 +47,7 @@
                     <li>
                         <form action="FrontServlet" method="POST" onclick="submit()">
                             <input type="hidden" name="command" value="RemoveCommand">
-                            <input type="hidden" name="product" value="<%=product.getId()%>">
+                            <input type="hidden" name="product" value="<%=product.getID()%>">
                             <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
                         </form>
                     </li>

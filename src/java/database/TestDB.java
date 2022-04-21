@@ -35,14 +35,14 @@ public class TestDB {
         con.removeProduct(1);
 
         con.showProducts();
-        close();
+        //close();
     }
 
     public void test2(){
         con.clearDB();
         con.addOrder(12, new int[]{1,2,3,4} );
 
-        close();
+        //close();
     }
 
     public void test3(Product[] products){
@@ -50,11 +50,11 @@ public class TestDB {
             con.addProduct((GenericProduct)p);
         }
 
-        close();
+        //close();
     }
 
-    public void close(){
+    /*public void close(){
         con.close();
-    }
+    }*/
 
 }
