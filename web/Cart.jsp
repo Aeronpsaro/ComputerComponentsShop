@@ -20,16 +20,10 @@
                 <h2 id="cantidadTitulo">CANTIDAD</h2>
                 <h2 id="precio">PRECIO</h2>
             </section>
-            <% System.out.println("hola1"); %>
             <% for(Product product:cart.getAmmounts().keySet()) { %>
-            <% System.out.println("hola2"); %>
             <section id="productoscarrito">
-                <ul class="producto">
-                    <% System.out.println("hola25"); %>
-                   
-                    
+                <ul class="producto">                  
                     <li><img src="<%=product.getImageURL() %>" width="120px" height="100px"/></li>
-                    <% System.out.println("hola3"); %>
                     <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
                         <form action="FrontServlet" method="POST" onchange="submit()">
@@ -37,7 +31,6 @@
                             <input type="hidden" name="product" value="<%=product.getID()%>">
                             <select name="cantidad">
                                 <% for (int i=1;i<=Integer.max(cart.getAmmounts().get(product),99);i++){%>
-                                <% System.out.println("hola4"); %>
                                 <option <%if (i==cart.getAmmounts().get(product)) {%>selected<%}%>><%=i%></option>
                                 <%}%>
                             </select>
@@ -58,15 +51,16 @@
              <% } %>
 
             <div id="Precioyboton">
-
-              <section id="preciototal">
+                <section id="preciototal">
                 <h2>Precio Total</h2>
                 <p id="pTotal">0.00€</p>
-              </section>
-              <div id="botonPedido">
-                <button>Hacer Pedido</button>
-              </div>
-
+                </section>
+                <form action="FrontServlet">
+                    <input type="hidden" name="command" value="OrderCommand">
+                    <div id="botonPedido">
+                      <button>Hacer Pedido</button>
+                    </div>
+                </form>
             </div>
     
         </article>

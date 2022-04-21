@@ -8,12 +8,12 @@ public class GenericProduct implements Product {
     String name;
     String description;
     String image;
-    double price;
+    float price;
     double score;
     String brand;
     int ammount;
 
-    public GenericProduct(String name, String description, String image, double price, String brand) {
+    public GenericProduct(String name, String description, String image, float price, String brand) {
         this.id = -1;
         this.name = name;
         this.description = description;
@@ -55,7 +55,7 @@ public class GenericProduct implements Product {
         return image;
     }
 
-    public double getPrice() {
+    public float getPrice() {
         return price;
     }
 
@@ -69,7 +69,7 @@ public class GenericProduct implements Product {
 
     @Override
     public int hashCode() {
-        return Objects.hash(getPrice(), getName(), getImageURL());
+        return getID();
     }
 
     @Override
@@ -83,8 +83,8 @@ public class GenericProduct implements Product {
         if (getClass() != obj.getClass()) {
             return false;
         }
-        final TestProduct other = (TestProduct) obj;
-        return true;
+        final GenericProduct other = (GenericProduct) obj;
+        return getID()==other.getID();
     }
 
 

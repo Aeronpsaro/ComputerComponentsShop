@@ -5,7 +5,7 @@ import java.util.Objects;
 public interface Product {
 
     public default int getID() {return -1;};
-    public double getPrice();
+    public float getPrice();
     public String getName();
     public default int getAmmount() {return 0;};
     public void setAmmount(int ammount);

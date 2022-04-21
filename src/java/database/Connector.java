@@ -79,7 +79,7 @@ public class Connector {
             st.setString(4, product.getImageURL());
             st.setDouble(5, product.getPrice());
             st.setString(6, product.getType().getSimpleName());
-            st.setString(6, product.getBrand());
+            st.setString(7, product.getBrand());
             st.execute();
 
 
@@ -129,7 +129,7 @@ public class Connector {
 
                 String image = result.getString("image");
 
-                double price = result.getDouble("price");
+                float price = result.getFloat("price");
 
                 String brand = result.getString("brand");
 
@@ -162,7 +162,7 @@ public class Connector {
 
                 String image = result.getString("image");
 
-                double price = result.getDouble("price");
+                float price = result.getFloat("price");
 
                 String brand = result.getString("brand");
 

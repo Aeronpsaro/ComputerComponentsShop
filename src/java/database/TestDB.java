@@ -16,9 +16,9 @@ public class TestDB {
     Connector con = Connector.getConector();
 
     public void test1(){
-        GenericProduct product = new GenericProduct("p1", "esto es una prueba", "imagen", 12.0, "acme");
-        GenericProduct product2 = new GenericProduct("p2", "esto es una prueba", "imagen", 15.0, "acme");
-        GenericProduct product3 = new GenericProduct("p3", "esto es una prueba", "imagen", 10.0, "acme");
+        GenericProduct product = new GenericProduct("p1", "esto es una prueba", "imagen", 12, "acme");
+        GenericProduct product2 = new GenericProduct("p2", "esto es una prueba", "imagen", 15, "acme");
+        GenericProduct product3 = new GenericProduct("p3", "esto es una prueba", "imagen", 10, "acme");
 
         con.clearDB();
 
