@@ -25,7 +25,7 @@ public class Connector {
     private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
     //private static String url = "shopDB.db";
 
-    private static Connection CONNECT;
+    private static final Connection CONNECT;
 
     private static final Connector INSTANCE;
 
