@@ -24,6 +24,7 @@ import model.Product;
 public class Connector {
     private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
     //private static String url = "shopDB.db";
+
     private static final Connection connect;
 
     private static final Connector INSTANCE;
@@ -43,12 +44,7 @@ public class Connector {
         try{
             connect = DriverManager.getConnection("JDBC:sqlite:" + url);
         }catch(SQLException ex) {
-            connect = null;
             System.out.println("conexion fallida");
-        }
-
-        if (connect != null) {
-            System.out.println("conectado");
         }
 
         INSTANCE = new Connector();

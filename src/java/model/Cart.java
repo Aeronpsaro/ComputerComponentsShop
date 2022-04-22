@@ -19,12 +19,7 @@ public class Cart {
     }
     
     public void remove(Product product) {
-        for(Product p:ammounts.keySet()){
-            if(p.getID() == product.getID()){
-                ammounts.remove(p);
-            }
-        }
-        //ammounts.remove(product);
+        ammounts.remove(product);
     }
     
     public void setProductAmmount(Product product, int ammount) {
