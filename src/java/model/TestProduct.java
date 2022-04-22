@@ -5,6 +5,16 @@ import java.util.Objects;
 public class TestProduct implements Product {
 
     @Override
+    public void setId(int id) {
+        return;
+    }
+
+    @Override
+    public void setAmmount(int ammount) {
+        return;
+    }
+
+    @Override
     public float getPrice() {
         return 10;
     }
