@@ -1,5 +1,6 @@
 package control;
 
+import database.Connector;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import model.Cart;
@@ -7,9 +8,10 @@ import model.Product;
 import testDB.DummySeeker;
 
 public class AddCommand extends FrontCommand {
-    
+    Connector con = Connector.getConector();
+
     private Product getProduct(int ID) {
-        return DummySeeker.getProduct(ID);
+        return con.getProductByID(ID);
     }
     
     @Override

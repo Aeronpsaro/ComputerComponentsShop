@@ -1,3 +1,8 @@
+package database;
+
+import model.GenericProduct;
+import model.Product;
+
 /*
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
@@ -8,13 +13,12 @@
  * @author Usuario
  */
 public class TestDB {
-    Conector con = new Conector();
+    Connector con = Connector.getConector();
 
     public void test1(){
-        connect();
-        Product product = new Product("p1", "esto es una prueba", "imagen", "tipo ejemplo", 12.0);
-        Product product2 = new Product("p2", "esto es una prueba", "imagen", "tipo ejemplo", 15.0);
-        Product product3 = new Product("p3", "esto es una prueba", "imagen", "tipo ejemplo", 10.0);
+        GenericProduct product = new GenericProduct("p1", "esto es una prueba", "imagen", 12, "acme");
+        GenericProduct product2 = new GenericProduct("p2", "esto es una prueba", "imagen", 15, "acme");
+        GenericProduct product3 = new GenericProduct("p3", "esto es una prueba", "imagen", 10, "acme");
 
         con.clearDB();
 
@@ -31,27 +35,26 @@ public class TestDB {
         con.removeProduct(1);
 
         con.showProducts();
-        close();
+        //close();
     }
 
     public void test2(){
-        connect();
         con.clearDB();
         con.addOrder(12, new int[]{1,2,3,4} );
 
-        close();
+        //close();
     }
 
-    public void connect(){
-        try {
-            con.connect();
-        } catch (Exception ex) {
-            System.err.println("coneccion fallida");
+    public void test3(Product[] products){
+        for (Product p:products){
+            con.addProduct((GenericProduct)p);
         }
+
+        //close();
     }
 
-    public void close(){
+    /*public void close(){
         con.close();
-    }
+    }*/
 
 }

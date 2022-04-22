@@ -20,11 +20,10 @@
                 <h2 id="cantidadTitulo">CANTIDAD</h2>
                 <h2 id="precio">PRECIO</h2>
             </section>
-            
             <% for(Product product:cart.getAmmounts().keySet()) { %>
             <section id="productoscarrito">
-                <ul class="producto">
-                    <li><img src="<%=product.getImageURL() %>" width="120px" height="100px"/></li>    
+                <ul class="producto">                  
+                    <li><img src="<%=product.getImageURL() %>" width="120px" height="100px"/></li>
                     <li><%=product.getName() %></li>
                     <li> <div class="cantidad">
                         <form action="FrontServlet" method="POST" onchange="submit()">

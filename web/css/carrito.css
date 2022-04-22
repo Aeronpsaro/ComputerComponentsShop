@@ -1,9 +1,3 @@
-#carrito{
-    width: 95%;
-    height: 400px;
-    margin-left: 20px;
-}
-
 #tituloscarrito{
     display: flex;
     font-size: small;
