@@ -1,0 +1,7 @@
+#titulos{
+    display: flex;
+    width: 60%;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 20px;
+}

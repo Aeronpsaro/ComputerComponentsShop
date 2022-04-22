@@ -43,7 +43,7 @@
                                 <input class="formulario" id="correo" type="mail" placeholder="Correo electrónico" name="correo" required>
                                 <input class="formulario" id="telefono" type="text" placeholder="Teléfono" name="telefono" >
                             </ul>
-                            <input id="botonAñadir" type="submit" value="Añadir usuario">
+                            <button id="botonAñadir"> Añadir usuario</button>
                         </form>
                     </section>
             </article>

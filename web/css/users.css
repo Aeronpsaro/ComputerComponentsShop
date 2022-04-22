@@ -3,9 +3,11 @@
     width: 40%;
     justify-content: space-between;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 #añadirusuario{
     float: right;
     height: 50px;
+    margin-top: 50px;
 }

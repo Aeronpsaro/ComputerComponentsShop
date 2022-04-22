@@ -1,0 +1,20 @@
+#infopedido{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-top: 20px;
+}
+
+#titulos{
+    display: flex;
+    width: 70%;
+    justify-content: space-between;
+    margin-left: 20px;
+    margin-top: 20px;
+}
+
+#aprobarpedido{
+    float: right;
+    height: 50px;
+    margin-top: 50px;
+}
