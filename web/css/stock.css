@@ -12,10 +12,12 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     width: 70%;
     justify-content: space-between;
     margin-left: 20px;
+    margin-top: 20px;
 }
 
 #añadirproducto{
     float: right;
     height: 50px;
+    margin-top: 50px;
 }
 

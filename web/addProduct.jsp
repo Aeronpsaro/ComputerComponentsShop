@@ -45,7 +45,7 @@
                                 <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto" required>
                                 <input class ="formulario" type="file" name="foto" size="10" required>
                             </ul>
-                        <input id="botonAñadirProducto" type="submit" value="Añadir producto">
+                        <button id="botonAñadir">Añadir producto</button>
                     </section>
                         
                     </form>
