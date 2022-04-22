@@ -22,7 +22,7 @@ import model.Product;
  * @author Usuario
  */
 public class Connector {
-    private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\src\\shopDB.db";
+    private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
     //private static String url = "shopDB.db";
 
     private static final Connection connect;
