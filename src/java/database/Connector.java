@@ -7,25 +7,18 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.util.*;
 import java.util.Arrays;
-import java.util.logging.Level;
-import java.util.logging.Logger;
 import model.GenericProduct;
 import model.Product;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+import control.Context;
 
 /**
  *
  * @author Usuario
  */
 public class Connector {
-    private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
-    //private static String url = "shopDB.db";
+    private static final String URL = Context.getPath("Database\\shopDB.db");
 
-    private static final Connection CONNECT;
+    private static Connection CONNECT;
 
     private static final Connector INSTANCE;
 
@@ -42,7 +35,7 @@ public class Connector {
           System.err.println("no se pudo cargar jbdc"+ ex);
         }
         try{
-            CONNECT = DriverManager.getConnection("JDBC:sqlite:" + url);
+            CONNECT = DriverManager.getConnection("JDBC:sqlite:" + URL);
         }catch(SQLException ex) {
             System.out.println("conexion fallida");
         }
