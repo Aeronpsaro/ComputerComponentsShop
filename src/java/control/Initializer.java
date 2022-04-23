@@ -25,7 +25,7 @@ public class Initializer extends HttpServlet {
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
         Catalogue catalogue = Catalogue.getCatalogue();
-        //catalogue.testInitializeDB();
+        catalogue.testInitializeDB();
         catalogue.testInitialize();
 
 

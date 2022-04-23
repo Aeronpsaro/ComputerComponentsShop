@@ -33,19 +33,24 @@
                     </section>
                     
                     <section>
-                        <form id="formulario" action="" method="post">
+                        <form id="formulario" action="FrontServlet" method="post">
                             <ul class="relleno">
+                                <input type="hidden" name="command" value="AddProductCommand"/>
                                 <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto" required>
-                                <select class="formulario" id="tipoproducto" name="text" required="">
+                                <input class="formulario" id="descripcionproducto" type="text" placeholder="Descripcion producto" name="descripcionproducto">
+                                <select class="formulario" id="tipoproducto" name="tipoproducto" required="">
                                     <option>Teclados</option>
                                     <option>Ratones</option>
                                     <option>Pantallas</option>
+                                    <<option>Generico</option>
                                 </select>
+                                <input class="formulario" id="marcaproducto" type="text" placeholder="Marca producto" name="marcaproducto">
                                 <input class="formulario" id="precioProducto" type="text" placeholder="Precio" name="precioproducto" required>
                                 <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto" required>
                                 <input class ="formulario" type="file" name="foto" size="10" required>
                             </ul>
-                        <input id="botonAñadirProducto" type="submit" value="Añadir producto">
+                            <input id="botonAñadirProducto" type="submit" value="Añadir producto">
+                        </form>
                     </section>
                         
                     </form>

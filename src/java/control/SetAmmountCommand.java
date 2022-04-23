@@ -11,6 +11,7 @@ public class SetAmmountCommand extends FrontCommand {
     Connector con = Connector.getConector();
 
     private Product getProduct(int ID) {
+        con.connect();
         return con.getProductByID(ID);
     }
     
@@ -21,6 +22,7 @@ public class SetAmmountCommand extends FrontCommand {
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         int productAmmount = Integer.parseInt(request.getParameter("cantidad"));
         cart.setProductAmmount(product, productAmmount);
+        con.connect();
         redirect("/Cart.jsp");
     }
 

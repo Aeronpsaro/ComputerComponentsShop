@@ -11,6 +11,7 @@ public class AddCommand extends FrontCommand {
     Connector con = Connector.getConector();
 
     private Product getProduct(int ID) {
+        con.connect();
         return con.getProductByID(ID);
     }
     
@@ -19,6 +20,7 @@ public class AddCommand extends FrontCommand {
         Product product = getProduct(Integer.parseInt(request.getParameter("product")));
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         cart.add(product);
+        con.close();
         redirect("/Cart.jsp");
     }
 }

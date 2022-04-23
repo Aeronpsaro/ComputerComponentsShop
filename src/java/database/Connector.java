@@ -9,6 +9,7 @@ import java.util.*;
 import java.util.Arrays;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import model.Catalogue;
 import model.GenericProduct;
 import model.Product;
 
@@ -22,10 +23,12 @@ import model.Product;
  * @author Usuario
  */
 public class Connector {
+    Catalogue catalogo = Catalogue.getCatalogue();
+
     private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
     //private static String url = "shopDB.db";
 
-    private static final Connection connect;
+    private static Connection connect;
 
     private static final Connector INSTANCE;
 
@@ -35,7 +38,11 @@ public class Connector {
 
 
     static{
-        
+        connect();
+        INSTANCE = new Connector(); 
+    }
+
+    public static void connect(){
         try {
           Class.forName("org.sqlite.JDBC").newInstance();
         } catch (Exception ex) {
@@ -46,25 +53,21 @@ public class Connector {
         }catch(SQLException ex) {
             System.out.println("conexion fallida");
         }
-
-        INSTANCE = new Connector();
-        
     }
 
-    //conection
     
 
-    /*public void close(){
+    public static void close(){
         try {
             connect.close();
             System.out.println("cerrado");
         } catch (SQLException ex) {
             Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
         }
-    }*/
+    }
 
     //product control
-    public void addProduct(Product product){
+    public int addProduct(Product product){
         try {
 
 
@@ -83,16 +86,22 @@ public class Connector {
             ResultSet result = st1.executeQuery();
 
             product.setId(result.getInt(1));
+            
 
             PreparedStatement st2 = connect.prepareStatement("insert into stock (id, ammount) values (?,?)");
             st2.setInt(1, product.getID());
             st2.setInt(2, 0);
             st2.execute();
 
+            
+            return product.getID();
+
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
 
+        
+        return -1;
 
     }
 

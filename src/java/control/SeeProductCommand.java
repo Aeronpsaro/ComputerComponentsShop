@@ -11,6 +11,7 @@ public class SeeProductCommand extends FrontCommand {
     Connector con = Connector.getConector();
 
     private Product getProduct(int ID) {
+        con.connect();
         return con.getProductByID(ID);
     }
     
@@ -19,6 +20,7 @@ public class SeeProductCommand extends FrontCommand {
         int productID = Integer.parseInt(request.getParameter("product"));
         Product product = getProduct(productID);
         request.setAttribute("product", product);
+        con.close();
         redirect("/producto.jsp");
     }
 
