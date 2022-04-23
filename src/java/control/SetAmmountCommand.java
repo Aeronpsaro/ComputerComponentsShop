@@ -5,7 +5,6 @@ import java.io.IOException;
 import javax.servlet.ServletException;
 import model.Cart;
 import model.Product;
-import testDB.DummySeeker;
 
 public class SetAmmountCommand extends FrontCommand {
     Connector con = Connector.getConector();

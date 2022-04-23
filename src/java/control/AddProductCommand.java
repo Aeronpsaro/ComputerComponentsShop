@@ -10,7 +10,6 @@ import model.PantallaProduct;
 import model.Product;
 import model.RatonProduct;
 import model.TecladoProduct;
-import testDB.DummySeeker;
 
 public class AddProductCommand extends FrontCommand {
     Connector con = Connector.getConector();

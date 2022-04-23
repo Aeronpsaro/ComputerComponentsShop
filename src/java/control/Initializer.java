@@ -1,8 +1,6 @@
 package control;
 
-import database.TestDB;
 import java.io.IOException;
-import java.io.PrintWriter;
 import javax.servlet.RequestDispatcher;
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
@@ -24,11 +22,12 @@ public class Initializer extends HttpServlet {
      */
     protected void processRequest(HttpServletRequest request, HttpServletResponse response)
             throws ServletException, IOException {
+
+        Context.setContext(request);
         Catalogue catalogue = Catalogue.getCatalogue();
-        catalogue.testInitializeDB();
-        catalogue.testInitialize();
 
-
+        //catalogue.testInitializeDB(); //vacia el catalogo y la base de datos y los llena de 20 cajas
+        catalogue.testInitialize(); // carga la base de datos
 
         request.getSession().setAttribute("cart", new Cart());
 

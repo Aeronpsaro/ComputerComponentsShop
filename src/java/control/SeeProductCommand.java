@@ -4,7 +4,6 @@ import database.Connector;
 import java.io.IOException;
 import javax.servlet.ServletException;
 import model.Product;
-import testDB.DummySeeker;
 
 public class SeeProductCommand extends FrontCommand {
 

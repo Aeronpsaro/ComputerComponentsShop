@@ -12,11 +12,7 @@ import java.util.logging.Logger;
 import model.Catalogue;
 import model.GenericProduct;
 import model.Product;
-
-/*
- * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
- * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
- */
+import control.Context;
 
 /**
  *
@@ -24,11 +20,9 @@ import model.Product;
  */
 public class Connector {
     Catalogue catalogo = Catalogue.getCatalogue();
+    private static final String URL = Context.getPath("Database\\shopDB.db");
 
-    private static String url = "C:\\Users\\Usuario\\Documents\\NetBeansProjects\\ComputerComponentsShopMaster\\shopDB.db";
-    //private static String url = "shopDB.db";
-
-    private static Connection connect;
+    private static Connection CONNECT;
 
     private static final Connector INSTANCE;
 
@@ -49,7 +43,7 @@ public class Connector {
           System.err.println("no se pudo cargar jbdc"+ ex);
         }
         try{
-            connect = DriverManager.getConnection("JDBC:sqlite:" + url);
+            CONNECT = DriverManager.getConnection("JDBC:sqlite:" + URL);
         }catch(SQLException ex) {
             System.out.println("conexion fallida");
         }
@@ -59,7 +53,7 @@ public class Connector {
 
     public static void close(){
         try {
-            connect.close();
+            CONNECT.close();
             System.out.println("cerrado");
         } catch (SQLException ex) {
             Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
@@ -71,7 +65,7 @@ public class Connector {
         try {
 
 
-            PreparedStatement st = connect.prepareStatement("insert into products (name, description, score, image, price, type, brand) values (?,?,?,?,?,?,?)");
+            PreparedStatement st = CONNECT.prepareStatement("insert into products (name, description, score, image, price, type, brand) values (?,?,?,?,?,?,?)");
             st.setString(1, product.getName());
             st.setString(2, product.getDescription());
             st.setDouble(3, product.getScore());
@@ -82,13 +76,13 @@ public class Connector {
             st.execute();
 
 
-            PreparedStatement st1 = connect.prepareStatement("select last_insert_rowid()");
+            PreparedStatement st1 = CONNECT.prepareStatement("select last_insert_rowid()");
             ResultSet result = st1.executeQuery();
 
             product.setId(result.getInt(1));
             
 
-            PreparedStatement st2 = connect.prepareStatement("insert into stock (id, ammount) values (?,?)");
+            PreparedStatement st2 = CONNECT.prepareStatement("insert into stock (id, ammount) values (?,?)");
             st2.setInt(1, product.getID());
             st2.setInt(2, 0);
             st2.execute();
@@ -107,9 +101,9 @@ public class Connector {
 
     public void removeProduct(int id){
         try {
-            PreparedStatement st = connect.prepareStatement("delete from stock WHERE id = " + id);
+            PreparedStatement st = CONNECT.prepareStatement("delete from stock WHERE id = " + id);
             st.execute();
-                              st = connect.prepareStatement("delete from products WHERE id = " + id);
+                              st = CONNECT.prepareStatement("delete from products WHERE id = " + id);
             st.execute();
 
         } catch (SQLException ex) {
@@ -122,7 +116,7 @@ public class Connector {
         Product productAux= null;
         List<Product> products= new ArrayList<>();
         try {
-            PreparedStatement st = connect.prepareStatement("select * from products");
+            PreparedStatement st = CONNECT.prepareStatement("select * from products");
             result = st.executeQuery();
             while (result.next()) {
 
@@ -155,7 +149,7 @@ public class Connector {
         ResultSet result = null;
         GenericProduct product = null;
         try {
-            PreparedStatement st = connect.prepareStatement("select * from products where id = " + aid);
+            PreparedStatement st = CONNECT.prepareStatement("select * from products where id = " + aid);
             result = st.executeQuery();
             while (result.next()) {
 
@@ -186,7 +180,7 @@ public class Connector {
     public void increaseStock(int id, int q){
         try {
 
-            PreparedStatement st = connect.prepareStatement("UPDATE stock SET ammount = ammount + "+ q +" WHERE id = " + id);
+            PreparedStatement st = CONNECT.prepareStatement("UPDATE stock SET ammount = ammount + "+ q +" WHERE id = " + id);
             st.execute();
 
         } catch (SQLException ex) {
@@ -199,7 +193,7 @@ public class Connector {
     public void reduceStock(int id, int q){
         try {
 
-            PreparedStatement st = connect.prepareStatement("UPDATE stock SET ammount = ammount - "+ q +" WHERE id = " + id);
+            PreparedStatement st = CONNECT.prepareStatement("UPDATE stock SET ammount = ammount - "+ q +" WHERE id = " + id);
             st.execute();
 
         } catch (SQLException ex) {
@@ -212,7 +206,7 @@ public class Connector {
     public int getAmmountByID(int aid){
         ResultSet result = null;
         try {
-            PreparedStatement st = connect.prepareStatement("select * from stock where id = " + aid);
+            PreparedStatement st = CONNECT.prepareStatement("select * from stock where id = " + aid);
             result = st.executeQuery();
             while (result.next()) {
 
@@ -231,7 +225,7 @@ public class Connector {
         try {
 
 
-            PreparedStatement st = connect.prepareStatement("insert into orders (items, user_id) values (?,?)");
+            PreparedStatement st = CONNECT.prepareStatement("insert into orders (items, user_id) values (?,?)");
             st.setString(1, Arrays.toString(items));
             st.setInt(2, user_id);
             st.execute();
@@ -245,7 +239,7 @@ public class Connector {
 
     public void removeOrder(int id){
         try {
-            PreparedStatement st = connect.prepareStatement("delete from orders WHERE id = " + id);
+            PreparedStatement st = CONNECT.prepareStatement("delete from orders WHERE id = " + id);
             st.execute();
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
@@ -256,7 +250,7 @@ public class Connector {
     public void showProducts(){
         ResultSet result = null;
         try {
-            PreparedStatement st = connect.prepareStatement("select * from products");
+            PreparedStatement st = CONNECT.prepareStatement("select * from products");
             result = st.executeQuery();
             while (result.next()) {
                 System.out.print("ID: ");
@@ -285,13 +279,13 @@ public class Connector {
     public void clearDB(){
         try {
 
-            PreparedStatement st = connect.prepareStatement("delete from stock;");
+            PreparedStatement st = CONNECT.prepareStatement("delete from stock;");
             st.execute();
-                              st = connect.prepareStatement("delete from products;");
+                              st = CONNECT.prepareStatement("delete from products;");
             st.execute();
-                              st = connect.prepareStatement("delete from orders;");
+                              st = CONNECT.prepareStatement("delete from orders;");
             st.execute();
-                              st = connect.prepareStatement("DELETE FROM SQLITE_SEQUENCE;");
+                              st = CONNECT.prepareStatement("DELETE FROM SQLITE_SEQUENCE;");
             st.execute();   
 
         } catch (SQLException ex) {

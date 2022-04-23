@@ -25,7 +25,9 @@
                     <section>
                         <ul class="relleno">
                             <li class ="formulariotitulos" >Nombre del producto</li>
+                            <li class ="formulariotitulos" >Descripcion del producto</li>
                             <li class ="formulariotitulos">Seleccione un tipo de producto</li>
+                            <li class ="formulariotitulos" >Marca del producto</li>
                             <li class ="formulariotitulos">Precio</li>
                             <li class ="formulariotitulos">Cantidad en stock</li>
                             <li class ="formulariotitulos">Subir foto del producto</li>
@@ -49,7 +51,7 @@
                                 <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto" required>
                                 <input class ="formulario" type="file" name="foto" size="10" required>
                             </ul>
-                            <input id="botonAñadirProducto" type="submit" value="Añadir producto">
+                            <input id="botonAñadir" type="submit" value="Añadir producto">
                         </form>
                     </section>
                         
