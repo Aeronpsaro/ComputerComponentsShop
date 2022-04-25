@@ -64,7 +64,7 @@
                                 <input class ="formulario" type="file" name="foto" size="10" required>
                             </div>
                             
-                            <input id="botonAñadir" type="submit" value="Añadir producto">
+                            <button id="botonAñadir" type="submit">Añadir producto</button>
                         
                     </form>
                 
