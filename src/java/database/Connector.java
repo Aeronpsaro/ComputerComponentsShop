@@ -146,6 +146,7 @@ public class Connector {
         return products;
         
     }
+    
 
     public Product getProductByID(int aid){
         ResultSet result = null;
