@@ -55,7 +55,7 @@
                 <h2>Precio Total</h2>
                 <p id="pTotal">0.00€</p>
                 </section>
-                <form action="FrontServlet">
+                <form action="FrontServlet" method="POST">
                     <input type="hidden" name="command" value="OrderCommand">
                     <div id="botonPedido">
                       <button>Hacer Pedido</button>

@@ -35,9 +35,9 @@
                     </section>
                     
                     <section>
-                        <form id="formulario" action="FrontServlet" method="post">
+                        <form id="formulario" action="FrontServlet" method="post" enctype = "multipart/form-data">
                             <ul class="relleno">
-                                <input type="hidden" name="command" value="AddProductCommand"/>
+                                <input type="hidden" name="command" value="AddProductCommand">
                                 <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto" required>
                                 <input class="formulario" id="descripcionproducto" type="text" placeholder="Descripcion producto" name="descripcionproducto">
                                 <select class="formulario" id="tipoproducto" name="tipoproducto" required="">
