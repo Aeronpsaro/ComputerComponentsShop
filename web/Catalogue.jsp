@@ -3,6 +3,7 @@
     Created on : 22 mar. 2022, 13:15:40
     Author     : alber
 --%>
+<%@page import="control.Context"%>
 <%@page import="model.Product"%>
 <%@page import="model.Catalogue"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
@@ -30,7 +31,7 @@
                             <input type="hidden" name="command" value="SeeProductCommand"/>
                             <input type="hidden" name="product" value="<%=product.getID()%>"/>
                             <div class="row">
-                                <img src="<%= product.getImageURL() %>"/>
+                                <img src= <%= product.getImageURL() %>>
                             </div>
                             <div class="row">
                                 <div class="col">

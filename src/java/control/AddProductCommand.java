@@ -23,7 +23,7 @@ public class AddProductCommand extends FrontCommand {
         GenericProduct prod = new GenericProduct(
                 request.getParameter("nombreproducto"),
                 request.getParameter("descripcionproducto"),
-                request.getParameter("fotoproducto"),
+                Context.getPath("web\\img\\") + request.getParameter("foto"),
                 Float.parseFloat(request.getParameter("precioproducto")),
                 request.getParameter("marcaproducto")
         );

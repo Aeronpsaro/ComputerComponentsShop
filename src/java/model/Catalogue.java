@@ -25,6 +25,7 @@ public class Catalogue {
     public void testInitialize() {
         con.connect();
         con.getProducts();
+        clearCatalogue();
         products.addAll(con.getProducts());
         
 
@@ -54,6 +55,10 @@ public class Catalogue {
 
     public static Catalogue getCatalogue() {
         return INSTANCE;
+    }
+
+    private void clearCatalogue(){
+        products.clear();
     }
 
 
