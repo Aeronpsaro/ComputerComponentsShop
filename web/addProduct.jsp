@@ -39,7 +39,7 @@
                             <ul class="relleno">
                                 <input type="hidden" name="command" value="AddProductCommand">
                                 <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto" required>
-                                <input class="formulario" id="descripcionproducto" type="text" placeholder="Descripcion producto" name="descripcionproducto">
+                                <textarea class="formulario" id="descripcionproducto" placeholder="Descripcion producto" name="descripcionproducto"></textarea>
                                 <select class="formulario" id="tipoproducto" name="tipoproducto" required="">
                                     <option>Teclados</option>
                                     <option>Ratones</option>
