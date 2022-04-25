@@ -27,7 +27,6 @@ public class Initializer extends HttpServlet {
         Catalogue catalogue = Catalogue.getCatalogue();
 
         //catalogue.testInitializeDB(); //vacia el catalogo y la base de datos y los llena de 20 cajas
-        catalogue.testInitialize(); // carga la base de datos
 
         request.getSession().setAttribute("cart", new Cart());
 

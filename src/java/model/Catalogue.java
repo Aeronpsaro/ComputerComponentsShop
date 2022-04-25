@@ -12,6 +12,7 @@ public class Catalogue {
     
     private Catalogue() {
         products = new ArrayList();
+        testInitialize();
     }
     
     public List<Product> getProducts() {
@@ -23,13 +24,13 @@ public class Catalogue {
     }
     
     public void testInitialize() {
-        con.connect();
+        Connector.connect();
         con.getProducts();
         clearCatalogue();
         products.addAll(con.getProducts());
         
 
-        con.close();
+        Connector.close();
 
         /*for (int i=0; i<20; i++) {
             products.add(new GenericProduct("caja", "es una caja", "https://m.media-amazon.com/images/I/61eIVXuxyAS._AC_SY355_.jpg", 20.0, "caja acme"));
@@ -37,7 +38,7 @@ public class Catalogue {
     }
 
     public void testInitializeDB() {
-        con.connect();
+        Connector.connect();
         List<GenericProduct> productsAux = new ArrayList<>();
 
         for (int i=0; i<20; i++) {
@@ -49,7 +50,7 @@ public class Catalogue {
             con.addProduct((GenericProduct)p);
         }
         con.showProducts();
-        con.close();
+        Connector.close();
     }    
 
 
