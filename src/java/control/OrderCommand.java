@@ -2,7 +2,6 @@ package control;
 
 import database.Connector;
 import java.io.IOException;
-import java.util.Arrays;
 import java.util.Map;
 import java.util.stream.Stream;
 import javax.servlet.ServletException;
