@@ -19,7 +19,6 @@ input{
 }
 
 #botonIniciarSesion{
-    
     background-color: rgb(40, 70, 206);
     color: white;
     font-size: 18px;
@@ -30,3 +29,23 @@ input{
 display: none;
 }
 
+@media screen and (min-width:640px) and (max-width:900px) {
+    
+    #login{
+        margin-left: 20%;
+    }
+    
+    h1{
+    margin-left: 36%;
+    }
+}
+
+@media screen and (max-width:640px) {
+    #login{
+        margin-left: 10%;
+    }
+    
+    h1{
+    margin-left: 26%;
+    }
+}
