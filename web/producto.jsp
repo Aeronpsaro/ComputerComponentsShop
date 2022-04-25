@@ -11,6 +11,7 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop - <%=product.getName()%></title>
+        <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/producto.css">
         <link rel="stylesheet" href="styles.css">
