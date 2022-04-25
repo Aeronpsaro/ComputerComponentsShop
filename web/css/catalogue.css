@@ -3,6 +3,7 @@ header{
     background-color: rgb(51, 138, 149);
     padding-left: 0px;
     margin-top: 0px;
+    border:solid;
 }
 
 #encabezado{
@@ -11,12 +12,10 @@ header{
     padding-left: 0px;
     margin-top: 0px;
     align-items: center;
+
 }
 
-#fotologo{
-    margin-top: -3px;
-    margin-left: 20px;
-}
+
 
 #buscar{
     margin-left: 50px;
@@ -42,4 +41,12 @@ main{
     margin-top: -20px;
     padding-top: 10px;
     padding-bottom: 100px;
+}
+
+#encabezadomediano,#links{
+    display:none;
+}
+
+@media screen and (min-width:640px) and (max-width:900px){
+    
 }

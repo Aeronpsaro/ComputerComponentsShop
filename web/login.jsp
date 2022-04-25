@@ -10,8 +10,8 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
-        <link rel="stylesheet" href="css/catalogue.css">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/signin.css">
         <link rel="stylesheet" href="styles.css">
     </head>
     <body>
