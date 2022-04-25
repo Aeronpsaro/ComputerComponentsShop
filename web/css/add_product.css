@@ -10,11 +10,16 @@ h1{
     margin-left: 20px;
 }
 
+.añadirprod{
+    display: flex;
+    margin-top: 20px;
+}
+
 #botonAñadir{
     color: black;
-    margin-top: 30px;
+    margin-top: 40px;
     width: 200px;
-    margin-left: 15%;    
+    margin-left: 35%;    
     background-color: #4CAF50;
     border: none;
     padding: 15px 32px;
@@ -33,11 +38,13 @@ h1{
 
 
 .formulario{
-    margin-top: 10px;
+    width: 300px;
 }
 
 .formulariotitulos{
-    margin-top: 13px;
+    width: 300px;
+    list-style-type: none;
+    
 }
 
 
@@ -56,7 +63,7 @@ h1{
 
 @media screen and (max-width:1200px){
     #todoformulario{
-        margin-left: 0%;
+        margin-left: 5%;
     }
     
     #rellenoTitulos{
