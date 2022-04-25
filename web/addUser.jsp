@@ -13,7 +13,7 @@
         <title>Añadir usuario</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/adduser.css">
+        <link rel="stylesheet" href="css/add_product.css">
         <link rel="stylesheet" href="css/flechaboton.css">
     </head>
     <body>
@@ -22,30 +22,42 @@
             <h1>Añadir Usuario</h1>
             
             <article id="todoformulario">
-                    <section>
-                        <ul class="relleno">
-                            <li class ="formulariotitulos" >Nombre y apellidos</li>
-                            <li class ="formulariotitulos">Usuario</li>
-                            <li class ="formulariotitulos">Contraseña</li>
-                            <li class ="formulariotitulos">Repetir contraseña</li>
-                            <li class ="formulariotitulos">Correo</li>
-                            <li class ="formulariotitulos">Teléfono (opcional)</li>
-                        </ul>
-                    </section>
                 
-                <section>
-                        <form id="formulario" action="" method="post">
-                            <ul class="relleno">
+                <form id="formulario" action="" method="post">
+                    <div  class="añadirprod">
+                                <li class ="formulariotitulos" >Nombre y apellidos</li>
                                 <input class="formulario" id="nombreUsuario" type="text" placeholder="Nombre completo" name="nombreusuario" required>
+                            </div>
+                            
+                            <div class="añadirprod">
+                                <li class ="formulariotitulos">Usuario</li>
                                 <input class="formulario" id="usuario" type="text" placeholder="Usuario" name="usuario" required>
+                            </div>
+                            
+                            
+                            <div id="marcaprod" class="añadirprod">
+                                <li class ="formulariotitulos">Contraseña</li>
                                 <input class="formulario" id="" type="password" placeholder="Contraseña" name="contraseña" required>
+                            </div>
+                            
+                            <div id="precioprod" class="añadirprod">
+                                <li class ="formulariotitulos">Repetir contraseña</li>
                                 <input class ="formulario" type="password" placeholder="Repetir contraseña" name="repContraseña" required>
+                            </div>
+                            
+                            <div id="cantidadprod" class="añadirprod">
+                                <li class ="formulariotitulos">Correo</li>
                                 <input class="formulario" id="correo" type="mail" placeholder="Correo electrónico" name="correo" required>
+                            </div>
+                            
+                            <div id="subirprod" class="añadirprod">
+                                <li class ="formulariotitulos">Teléfono (opcional)</li>
                                 <input class="formulario" id="telefono" type="text" placeholder="Teléfono" name="telefono" >
-                            </ul>
+                            </div>
+                            
                             <button id="botonAñadir"> Añadir usuario</button>
-                        </form>
-                    </section>
+                </form>
+                
             </article>
             
             <div id="flechayboton">

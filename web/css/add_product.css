@@ -66,6 +66,15 @@ h1{
         margin-left: 5%;
     }
     
+    .formulario{
+        width: 200px;
+    }
+
+    .formulariotitulos{
+        width: 200px;
+        list-style-type: none;
+    }
+    
     #rellenoTitulos{
     width: 250px;
 }
