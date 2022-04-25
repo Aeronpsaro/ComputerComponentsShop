@@ -42,7 +42,7 @@ public class TestDB {
     public void test2(){
         con.connect();
         con.clearDB();
-        con.addOrder(12, new int[]{1,2,3,4} );
+        con.addOrder(12,new int[]{1,2,3,4},new int[]{10,10,10,10} );
 
         con.close();
     }
