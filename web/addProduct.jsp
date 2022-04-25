@@ -13,7 +13,7 @@
         <title>Añadir Producto</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/addproduct.css">
+        <link rel="stylesheet" href="css/add_product.css">
         <link rel="stylesheet" href="css/flechaboton.css">
     </head>
     <body>
@@ -23,14 +23,19 @@
             
             <article id="todoformulario">
                     <section>
-                        <ul class="relleno">
+                        <ul id="rellenoTitulos" class="relleno">
+                            
                             <li class ="formulariotitulos" >Nombre del producto</li>
                             <li class ="formulariotitulos" >Descripcion del producto</li>
-                            <li class ="formulariotitulos">Seleccione un tipo de producto</li>
-                            <li class ="formulariotitulos" >Marca del producto</li>
-                            <li class ="formulariotitulos">Precio</li>
-                            <li class ="formulariotitulos">Cantidad en stock</li>
-                            <li class ="formulariotitulos">Subir foto del producto</li>
+                            <div id="titulosAddproduct">
+                                    <li class ="formulariotitulos">Seleccione un tipo de producto</li>
+                                    <li class ="formulariotitulos" >Marca del producto</li>
+                                    <li class ="formulariotitulos">Precio</li>
+                                    <div id="titulosprod">
+                                        <li class ="formulariotitulos">Cantidad en stock</li>
+                                        <li class ="formulariotitulos">Subir foto del producto</li>
+                                    </div>
+                            </div>
                         </ul>
                     </section>
                     

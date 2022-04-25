@@ -1,3 +1,14 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 25 abr. 2022, 17:24:15
+    Author     : alber
+*/
+h1{
+    margin-left: 20px;
+}
 
 #botonAñadir{
     color: black;
@@ -19,6 +30,8 @@
     list-style-type: none;
 }
 
+
+
 .formulario{
     margin-top: 10px;
 }
@@ -34,8 +47,19 @@
     display: flex;
 }
 
-@media screen and (min-width:640px) and (max-width:900px){
+#titulosAddproduct{
+    margin-top: 27px;
+}
+#titulosprod{
+    margin-top: 20px;
+}
+
+@media screen and (max-width:1200px){
     #todoformulario{
         margin-left: 0%;
     }
+    
+    #rellenoTitulos{
+    width: 250px;
+}
 }
