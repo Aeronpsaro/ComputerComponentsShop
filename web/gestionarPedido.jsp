@@ -4,6 +4,9 @@
     Author     : alber
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="model.Cart"%>
+<%@page import="database.Connector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -17,6 +20,13 @@
         <jsp:include page="header.jsp"/>
         
         <main>
+            <%
+                /*Connector connector = Connector.getConector();
+                Connector.connect();
+                int userID = 0;
+                List<Cart>orders = connector.getOrders(userID);
+                Connector.close();
+                for (Cart cart:orders) {}*/%>
             <ul>
                 <h1>ID del Pedido</h1>
             <article>

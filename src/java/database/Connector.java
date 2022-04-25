@@ -13,6 +13,7 @@ import model.Catalogue;
 import model.GenericProduct;
 import model.Product;
 import control.Context;
+import model.Cart;
 
 /**
  *
@@ -143,6 +144,10 @@ public class Connector {
 
         return products;
         
+    }
+    
+    public List<Cart> getOrders(int userID) {
+        throw new UnsupportedOperationException();
     }
 
     public Product getProductByID(int aid){
