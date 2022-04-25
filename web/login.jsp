@@ -13,18 +13,20 @@
         <title>Login</title>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/signin.css">
+        <link rel="stylesheet" href="css/login.css">
     </head>
     <body>
         <jsp:include page="header.jsp"/>
         
         <main>
+            <article>
             <h1>Login</h1>
             <section id="login">
                 <input class="formluario" type="text" placeholder="Usuario" name="usuario">
                 <input class="formluario" type="password" placeholder="Contraseña" name="contraseña">
                 <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
             </section>
+            </article>
         </main>
     </body>
 </html>
