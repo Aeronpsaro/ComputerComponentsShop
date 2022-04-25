@@ -22,43 +22,49 @@
             <h1>Añadir Producto</h1>
             
             <article id="todoformulario">
-                    <section>
-                        <ul id="rellenoTitulos" class="relleno">
-                            
-                            <li class ="formulariotitulos" >Nombre del producto</li>
-                            <li class ="formulariotitulos" >Descripcion del producto</li>
-                            <div id="titulosAddproduct">
-                                    <li class ="formulariotitulos">Seleccione un tipo de producto</li>
-                                    <li class ="formulariotitulos" >Marca del producto</li>
-                                    <li class ="formulariotitulos">Precio</li>
-                                    <div id="titulosprod">
-                                        <li class ="formulariotitulos">Cantidad en stock</li>
-                                        <li class ="formulariotitulos">Subir foto del producto</li>
-                                    </div>
-                            </div>
-                        </ul>
-                    </section>
-                    
-                    <section>
                         <form id="formulario" action="FrontServlet" method="post" enctype = "multipart/form-data">
-                            <ul class="relleno">
-                                <input type="hidden" name="command" value="AddProductCommand">
+                            <input type="hidden" name="command" value="AddProductCommand">
+                            <div id="nombreprod" class="añadirprod">
+                                <li class ="formulariotitulos" >Nombre del producto</li>
                                 <input class="formulario" id="nombreproducto" type="text" placeholder="Nombre producto" name="nombreproducto" required>
+                            </div>
+                            
+                            <div id="descripcionprod" class="añadirprod">
+                                <li class ="formulariotitulos" >Descripcion del producto</li>
                                 <textarea class="formulario" id="descripcionproducto" placeholder="Descripcion producto" name="descripcionproducto"></textarea>
+                            </div>
+                            
+                            <div id="seleccionprod" class="añadirprod">
+                                <li class ="formulariotitulos">Seleccione un tipo de producto</li>
                                 <select class="formulario" id="tipoproducto" name="tipoproducto" required="">
                                     <option>Teclados</option>
                                     <option>Ratones</option>
                                     <option>Pantallas</option>
                                     <<option>Generico</option>
                                 </select>
+                            </div> 
+                            
+                            <div id="marcaprod" class="añadirprod">
+                                <li class ="formulariotitulos" >Marca del producto</li>
                                 <input class="formulario" id="marcaproducto" type="text" placeholder="Marca producto" name="marcaproducto">
+                            </div>
+                            
+                            <div id="precioprod" class="añadirprod">
+                                <li class ="formulariotitulos">Precio</li>
                                 <input class="formulario" id="precioProducto" type="text" placeholder="Precio" name="precioproducto" required>
+                            </div>
+                            
+                            <div id="cantidadprod" class="añadirprod">
+                                <li class ="formulariotitulos">Cantidad en stock</li>
                                 <input class="formulario" id="cantidadproducto" type="text" placeholder="Cantidad en Stock" name="cantidadproducto" required>
+                            </div>
+                            
+                            <div id="subirprod" class="añadirprod">
+                                <li class ="formulariotitulos">Subir foto del producto</li>
                                 <input class ="formulario" type="file" name="foto" size="10" required>
-                            </ul>
+                            </div>
+                            
                             <input id="botonAñadir" type="submit" value="Añadir producto">
-                        </form>
-                    </section>
                         
                     </form>
                 
