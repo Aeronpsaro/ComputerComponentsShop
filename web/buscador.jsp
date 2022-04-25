@@ -10,7 +10,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
-        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/buscador.css">
     </head>
     <body>

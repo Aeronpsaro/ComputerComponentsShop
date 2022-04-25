@@ -5,7 +5,6 @@
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
-        <link rel="stylesheet" href="styles.css">
     </head>
     <body>
         <jsp:include page="header.jsp"/>
