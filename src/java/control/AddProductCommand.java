@@ -8,11 +8,9 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import javax.servlet.ServletException;
 import javax.servlet.http.Part;
-import model.Cart;
 import model.Catalogue;
 import model.GenericProduct;
 import model.PantallaProduct;
-import model.Product;
 import model.RatonProduct;
 import model.TecladoProduct;
 
@@ -23,7 +21,7 @@ public class AddProductCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
         int idProducto = -1;
-        con.connect();
+        Connector.connect();
         
         Part filePart = request.getPart("foto"); // Retrieves <input type="file" name="file">
         String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
@@ -62,7 +60,7 @@ public class AddProductCommand extends FrontCommand {
 
         con.increaseStock(idProducto, Integer.parseInt(request.getParameter("cantidadproducto")));
         catalogo.addProduct(con.getProductByID(idProducto));
-        con.close();
+        Connector.close();
         redirect("/Catalogue.jsp");
     }
 }
