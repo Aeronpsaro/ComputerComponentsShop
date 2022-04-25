@@ -14,7 +14,6 @@
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/orders.css">
-        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/flechaboton.css">
 
     </head>

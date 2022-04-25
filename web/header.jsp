@@ -1,3 +1,6 @@
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="styles.css">
+
 <header>
     <ul id="encabezado">
         <li id="fotoLogoli"><a href="Catalogue.jsp"><img style="border-radius:1em" id="fotologo" src="img\logo.jpeg" alt="menu" height="80px"></a></li>
