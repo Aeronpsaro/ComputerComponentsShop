@@ -221,13 +221,15 @@ public class Connector {
     }
 
     //orders 
-    public void addOrder(int user_id, int[] items){
+    public void addOrder(int user_id, int[] items, int[] ammounts){
         try {
 
 
-            PreparedStatement st = CONNECT.prepareStatement("insert into orders (items, user_id) values (?,?)");
-            st.setString(1, Arrays.toString(items));
-            st.setInt(2, user_id);
+            PreparedStatement st = CONNECT.prepareStatement("insert into orders (user_id, items, ammounts) values (?,?,?)");
+            
+            st.setInt(1, user_id);
+            st.setString(2, Arrays.toString(items));
+            st.setString(3, Arrays.toString(ammounts));
             st.execute();
 
         } catch (SQLException ex) {
