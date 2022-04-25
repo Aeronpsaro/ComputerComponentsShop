@@ -13,6 +13,7 @@ import model.Catalogue;
 import model.GenericProduct;
 import model.Product;
 import control.Context;
+import model.Order;
 
 /**
  *
@@ -246,6 +247,46 @@ public class Connector {
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
         }
+    }
+
+    public List<Order> getOrders(){
+        List<Order> orders = new ArrayList<>();
+        ResultSet result = null;
+        Order auxOrder = null;
+        List<Product> products= new ArrayList<>();
+        try {
+            PreparedStatement st = CONNECT.prepareStatement("select * from orders");
+            result = st.executeQuery();
+            while (result.next()) {
+                
+
+                int id = result.getInt("id");
+
+                int user_id = result.getInt("user_id");
+                
+                String itemsString =result.getString("items");
+                String ammountsString = result.getString("ammounts");
+
+                List<String> itemsSL = Arrays.asList(itemsString.substring(1, itemsString.length() - 1).split(", "));
+                List<String> ammountsSL = Arrays.asList(ammountsString.substring(1, ammountsString.length() - 1).split(", "));
+
+                List<Integer> items = new ArrayList<>();
+                List<Integer> ammounts = new ArrayList<>();
+
+                for(String s : itemsSL) items.add(Integer.valueOf(s));
+                for(String s : ammountsSL) ammounts.add(Integer.valueOf(s));
+
+                auxOrder = new Order(id, user_id, items, ammounts);      
+
+                orders.add(auxOrder);           
+
+            }
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        return orders;
+        
     }
 
     //misc
