@@ -8,6 +8,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Computer Components Shop</title>
+        <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/cart.css">
         <link rel="stylesheet" href="styles.css">
@@ -55,7 +56,7 @@
                 <h2>Precio Total</h2>
                 <p id="pTotal">0.00€</p>
                 </section>
-                <form action="FrontServlet">
+                <form action="FrontServlet" method="POST">
                     <input type="hidden" name="command" value="OrderCommand">
                     <div id="botonPedido">
                       <button>Hacer Pedido</button>

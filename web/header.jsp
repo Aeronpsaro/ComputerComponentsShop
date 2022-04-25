@@ -1,6 +1,9 @@
+<link rel="stylesheet" href="css/main.css">
+<link rel="stylesheet" href="styles.css">
+
 <header>
     <ul id="encabezado">
-        <li id="fotoLogoli"><a href="Catalogue.jsp"><img id="fotologo" src="img\logo.jpeg" alt="menu" height="80px"></a></li>
+        <li id="fotoLogoli"><a href="Catalogue.jsp"><img style="border-radius:1em" id="fotologo" src="img\logo.jpeg" alt="menu" height="80px"></a></li>
         <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" placeholder="Buscar"></form></li>
         <nav id="buscador">
         <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Home</a></li>

@@ -1,7 +1,5 @@
 package model;
 
-import java.util.Objects;
-
 public interface Product {
 
     public default int getID() {return -1;};

@@ -10,8 +10,12 @@
     padding-bottom: 50px;  
 }
 
+article{
+    border: solid;
+}
+
 h1{
-    margin-left: 46%;
+    margin-left: 36%;
 }
 
 input{
@@ -25,9 +29,7 @@ input{
     border-radius: 12px;
 }
 
-#buscar{
-display: none;
-}
+
 
 @media screen and (min-width:640px) and (max-width:900px) {
     

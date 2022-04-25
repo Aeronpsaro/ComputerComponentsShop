@@ -4,12 +4,16 @@
     Author     : alber
 --%>
 
+<%@page import="java.util.List"%>
+<%@page import="model.Cart"%>
+<%@page import="database.Connector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
+        <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/gestionarPedido.css">
     </head>
@@ -17,6 +21,13 @@
         <jsp:include page="header.jsp"/>
         
         <main>
+            <%
+                /*Connector connector = Connector.getConector();
+                Connector.connect();
+                int userID = 0;
+                List<Cart>orders = connector.getOrders(userID);
+                Connector.close();
+                for (Cart cart:orders) {}*/%>
             <ul>
                 <h1>ID del Pedido</h1>
             <article>

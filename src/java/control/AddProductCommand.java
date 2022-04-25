@@ -1,13 +1,16 @@
 package control;
 
 import database.Connector;
+import java.io.File;
 import java.io.IOException;
+import java.io.InputStream;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import javax.servlet.ServletException;
-import model.Cart;
+import javax.servlet.http.Part;
 import model.Catalogue;
 import model.GenericProduct;
 import model.PantallaProduct;
-import model.Product;
 import model.RatonProduct;
 import model.TecladoProduct;
 
@@ -18,12 +21,21 @@ public class AddProductCommand extends FrontCommand {
     @Override
     public void process() throws ServletException, IOException {
         int idProducto = -1;
-        con.connect();
-
+        Connector.connect();
+        
+        Part filePart = request.getPart("foto"); // Retrieves <input type="file" name="file">
+        String fileName = Paths.get(filePart.getSubmittedFileName()).getFileName().toString(); // MSIE fix.
+        InputStream fileContent = filePart.getInputStream();
+        
+        File uploads = new File(Context.getPath("img"));
+        File file = new File(uploads, fileName);
+        Files.copy(fileContent, file.toPath());
+        
+        
         GenericProduct prod = new GenericProduct(
                 request.getParameter("nombreproducto"),
                 request.getParameter("descripcionproducto"),
-                Context.getPath("web\\img\\") + request.getParameter("foto"),
+                "img\\"+fileName,
                 Float.parseFloat(request.getParameter("precioproducto")),
                 request.getParameter("marcaproducto")
         );
@@ -48,7 +60,7 @@ public class AddProductCommand extends FrontCommand {
 
         con.increaseStock(idProducto, Integer.parseInt(request.getParameter("cantidadproducto")));
         catalogo.addProduct(con.getProductByID(idProducto));
-        con.close();
+        Connector.close();
         redirect("/Catalogue.jsp");
     }
 }
