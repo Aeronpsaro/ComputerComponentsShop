@@ -14,9 +14,9 @@
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/login.css">
+        <link rel="stylesheet" href="css/signin.css">
     </head>
-    <body>
+    <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>
         
         <main>
