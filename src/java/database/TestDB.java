@@ -23,9 +23,9 @@ public class TestDB {
 
         con.clearDB();
 
-        con.addProduct(product);
-        con.addProduct(product2);
-        con.addProduct(product3);
+        con.addProduct(product,1);
+        con.addProduct(product2,2);
+        con.addProduct(product3,3);
 
         con.increaseStock(1, 10);
         con.increaseStock(2, 20);
@@ -50,7 +50,7 @@ public class TestDB {
     public void test3(Product[] products){
         con.connect();
         for (Product p:products){
-            con.addProduct((GenericProduct)p);
+            con.addProduct((GenericProduct)p,0);
         }
 
         con.close();

@@ -63,7 +63,7 @@ public class Connector {
     }
 
     //product control
-    public int addProduct(Product product){
+    public int addProduct(Product product, int ammount){
         try {
 
 
@@ -86,7 +86,7 @@ public class Connector {
 
             PreparedStatement st2 = CONNECT.prepareStatement("insert into stock (id, ammount) values (?,?)");
             st2.setInt(1, product.getID());
-            st2.setInt(2, 0);
+            st2.setInt(2, ammount);
             st2.execute();
 
             
@@ -170,6 +170,7 @@ public class Connector {
 
                 product = new GenericProduct(name, description, image, price, brand);
                 product.setId(id);
+                product.setAmmount(this.getAmmountByID(id));
             }
         } catch (SQLException ex) {
             System.err.println(ex.getMessage());
