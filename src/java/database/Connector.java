@@ -179,8 +179,6 @@ public class Connector {
         
     }
     
-    public static Product getProductByID(Integer aid) { return INSTANCE.getProductByID(aid.intValue()); }
-
     //Stock control
     public void increaseStock(int id, int q){
         try {
@@ -381,7 +379,7 @@ public class Connector {
         }
     }
 
-
+    
 
 }
 

@@ -33,6 +33,11 @@
                 for (Order order:orders) {%>
             <ul>
                 <h1>Pedido <%=order.getId()%></h1>
+                <form action="FrontServlet" method="POST" onclick="submit()">
+                    <input type="hidden" name="command" value="RemoveOrderCommand">
+                    <input type="hidden" name="order" value="<%=order.getId()%>">
+                    <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
+                </form>
                 <%
                     Iterator ammounts = order.getAmmounts().iterator();
                     Connector.connect();

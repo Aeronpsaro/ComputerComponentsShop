@@ -16,7 +16,8 @@
     <div id="encabezado900">
     <ul id="encabezadomediano">
         <li id="fotoLogoli"><a href="Catalogue.jsp"><img id="fotologo" src="img\logo.jpeg" alt="menu" height="60px"></a></li>
-        <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" placeholder="Buscar"></form></li>
+        <li id="buscar"><form action="FrontServlet" method="post"><input type="hidden" name="command" value="SearchCommand">
+                <input id="texto" type="text" name="query" placeholder="Buscar"></form></li>
         <nav id="buscador">
     </ul>
     <ul id="links">
