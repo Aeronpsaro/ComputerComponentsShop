@@ -4,8 +4,10 @@
     Author     : alber
 --%>
 
+<%@page import="java.util.Iterator"%>
+<%@page import="model.Product"%>
+<%@page import="model.Order"%>
 <%@page import="java.util.List"%>
-<%@page import="model.Cart"%>
 <%@page import="database.Connector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -23,78 +25,41 @@
         
         <main>
             <%
-                /*Connector connector = Connector.getConector();
+                Connector connector = Connector.getConector();
                 Connector.connect();
                 int userID = 0;
-                List<Cart>orders = connector.getOrders(userID);
+                List<Order>orders = connector.getOrders(userID);
                 Connector.close();
-                for (Cart cart:orders) {}*/%>
+                for (Order order:orders) {%>
             <ul>
-                <h1>ID del Pedido</h1>
-            <article>
-                <section class="datosproducto">
-                    <img src="" alt="" height="100px" width="100px">
-                    <div class="nombreProducto">
-                        <h2>Nombre producto</h2>
-                    </div>
-                    
-                </section>
-                <section class="informacionadicional">
-                    <p>0.00€</p>
-                    <p>0-5</p>
-                </section>
-            </article>
+                <h1>Pedido <%=order.getId()%></h1>
+                <form action="FrontServlet" method="POST" onclick="submit()">
+                    <input type="hidden" name="command" value="RemoveOrderCommand">
+                    <input type="hidden" name="order" value="<%=order.getId()%>">
+                    <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
+                </form>
+                <%
+                    Iterator ammounts = order.getAmmounts().iterator();
+                    Connector.connect();
+                    for (int productID: order.getItems()) {
+                        Product product = connector.getConector().getProductByID(productID);
+                %>
+                <article>
+                    <section class="datosproducto">
+                        <img src="<%=product.getImageURL()%>" alt="" height="100px" width="100px">
+                        <div class="nombreProducto">
+                            <h2><%=product.getName()%></h2>
+                        </div>
 
-            <article>
-                <section class="datosproducto">
-                    <img src="" alt="" height="100px" width="100px">
-                    <div class="nombreProducto">
-                        <h2>Nombre producto</h2>
-                    </div>
-                    
-                </section>
-                <section class="informacionadicional">
-                    <p>0.00€</p>
-                    <p>0-5</p>
-                </section>
-            </article>
-
-            <article>
-                <section class="datosproducto">
-                    <img src="" alt="" height="100px" width="100px">
-                    <div class="nombreProducto">
-                        <h2>Nombre producto</h2>
-                    </div>
-                    
-                </section>
-                <section class="informacionadicional">
-                    <p>0.00€</p>
-                    <p>0-5</p>
-                </section>
-            </article>
-
-            <article>
-                <section class="datosproducto">
-                    <img src="" alt="" height="100px" width="100px">
-                    <div class="nombreProducto">
-                        <h2>Nombre producto</h2>
-                    </div>
-                    
-                </section>
-                <section class="informacionadicional">
-                    <p>0.00€</p>
-                    <p>0-5</p>
-                </section>
-            </article>
-
-            <div id="cancelarPedido">
-                <button>Cancelar Pedido</button>
-            </div>
-            
-
+                    </section>
+                    <section class="informacionadicional">
+                        <p><%=String.format("%.2f", product.getPrice())%>€</p>
+                        <p><%=ammounts.next()%></p>
+                    </section>
+                </article>
+            <%}%>
             </ul>
-
-            
+            <%}Connector.close();%>
         </main>
     </body>
 </html>

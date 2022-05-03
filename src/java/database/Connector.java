@@ -179,7 +179,7 @@ public class Connector {
         return product;
         
     }
-
+    
     //Stock control
     public void increaseStock(int id, int q){
         try {
@@ -380,7 +380,7 @@ public class Connector {
         }
     }
 
-
+    
 
 }
 

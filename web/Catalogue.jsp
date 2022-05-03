@@ -41,7 +41,7 @@
                                     <%=product.getName()%>
                                 </div>
                                 <div id="precioproducto" class="col"">
-                                    <%=product.getPrice()%>€
+                                    <%=String.format("%.2f", product.getPrice())%>€
                                 </div>
                             </div>
                         </form>
