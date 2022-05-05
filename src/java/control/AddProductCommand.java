@@ -54,7 +54,7 @@ public class AddProductCommand extends FrontCommand {
                 idProducto = con.addProduct(new RatonProduct(prod),ammount);
                 break;
             case "Genérico":
-                idProducto = con.addProduct(prod);
+                idProducto = con.addProduct(prod, ammount);
                 break;
             default:
                 idProducto = con.addProduct(prod,ammount);
