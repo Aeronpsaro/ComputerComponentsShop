@@ -21,8 +21,9 @@
         <nav id="buscador">
     </ul>
     <ul id="links">
-        <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Home</a></li>
-        <li><a class="vinculo" href="login.jsp" style="color: white"> Login</a></li>
+        <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Inicio</a></li>
+        <li><a class="vinculo" href="gestionarPedido.jsp" style="color: white"> Pedidos</a></li>
+        <li><a class="vinculo" href="login.jsp" style="color: white"> Iniciar sesión</a></li>
         <li id="carro"><a class="vinculo" href="Cart.jsp"><img id="imgCarrito" src="img\carrito.png" alt="menu" height="30px"></a></li>                    </nav>
     </ul>
     </div>

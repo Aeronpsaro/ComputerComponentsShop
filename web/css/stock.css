@@ -9,7 +9,7 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
 
 #titulos{
     display: flex;
-    width: 70%;
+    width: 75%;
     justify-content: space-between;
     margin-left: 20px;
     margin-top: 20px;
@@ -21,3 +21,15 @@ Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css
     margin-top: 50px;
 }
 
+#productosStock{
+    display:flex;
+    list-style-type: none;
+    width: 76%;
+    justify-content: space-between;
+    padding-right: 60px;
+    background-color: lightblue;
+    padding-bottom: 20px;
+    padding-top: 20px;
+    margin-left: 5px;
+    border-radius: 12px;
+}
