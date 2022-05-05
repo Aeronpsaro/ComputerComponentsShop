@@ -31,7 +31,7 @@
                             <input type="hidden" name="command" value="SetAmmountCommand">
                             <input type="hidden" name="product" value="<%=product.getID()%>">
                             <select name="cantidad">
-                                <% for (int i=1;i<=Integer.max(cart.getAmmounts().get(product),99);i++){%>
+                                <% for (int i=1;i<=Integer.max(cart.getAmmounts().get(product),product.getAmmount());i++){%>
                                 <option <%if (i==cart.getAmmounts().get(product)) {%>selected<%}%>><%=i%></option>
                                 <%}%>
                             </select>
