@@ -41,7 +41,7 @@
                                     <option>Teclados</option>
                                     <option>Ratones</option>
                                     <option>Pantallas</option>
-                                    <<option>Generico</option>
+                                    <<option>Genérico</option>
                                 </select>
                             </div> 
                             
