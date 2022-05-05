@@ -50,7 +50,7 @@ public class AddProductCommand extends FrontCommand {
             case "Ratones":
                 idProducto = con.addProduct(new RatonProduct(prod));
                 break;
-            case "Generico":
+            case "Genérico":
                 idProducto = con.addProduct(prod);
                 break;
             default:
