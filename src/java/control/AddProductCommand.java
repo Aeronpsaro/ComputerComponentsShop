@@ -29,7 +29,10 @@ public class AddProductCommand extends FrontCommand {
         
         File uploads = new File(Context.getPath("img"));
         File file = new File(uploads, fileName);
-        Files.copy(fileContent, file.toPath());
+
+        if(!file.exists()) {
+            Files.copy(fileContent, file.toPath());
+        }
         
         
         GenericProduct prod = new GenericProduct(
@@ -39,26 +42,25 @@ public class AddProductCommand extends FrontCommand {
                 Float.parseFloat(request.getParameter("precioproducto")),
                 request.getParameter("marcaproducto")
         );
-
+        int ammount = Integer.parseInt(request.getParameter("cantidadproducto"));
         switch(request.getParameter("tipoproducto")){
             case "Teclados":
-                idProducto = con.addProduct(new TecladoProduct(prod));
+                idProducto = con.addProduct(new TecladoProduct(prod),ammount);
                 break;
             case "Pantallas":
-                idProducto = con.addProduct(new PantallaProduct(prod));
+                idProducto = con.addProduct(new PantallaProduct(prod),ammount);
                 break;
             case "Ratones":
-                idProducto = con.addProduct(new RatonProduct(prod));
+                idProducto = con.addProduct(new RatonProduct(prod),ammount);
                 break;
             case "Genérico":
                 idProducto = con.addProduct(prod);
                 break;
             default:
-                idProducto = con.addProduct(prod);
+                idProducto = con.addProduct(prod,ammount);
                 break;
         }
 
-        con.increaseStock(idProducto, Integer.parseInt(request.getParameter("cantidadproducto")));
         catalogo.addProduct(con.getProductByID(idProducto));
         Connector.close();
         redirect("/Catalogue.jsp");

@@ -4,8 +4,12 @@
     Author     : alber
 --%>
 
+<%@page import="model.Product"%>
+<%@page import="model.Catalogue"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
+
+<% Catalogue catalogue = Catalogue.getCatalogue(); %>
 <html>
     <head>
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
@@ -26,6 +30,17 @@
                 <h2>Nombre</h2>
                 <h2>Precio</h2>
                 <h2>Cantidad</h2>
+            </section>
+            <% for(Product product:catalogue.getProducts()) { %>
+            <section>
+                <ul>                  
+                    <li> <%=product.getID()%> </li>
+                    <li> <%=product.getName()%> </li>
+                    <li> <%=product.getPrice()%> </li>
+                    <li> <%=product.getAmmount()%> </li>
+                </ul>
+            <% } %>
+             
             </section>
             <div id="flechayboton">
                 <a href="#" class="volver" onclick="window.location.href='Admin.jsp'">

@@ -2,6 +2,7 @@ package model;
 
 import database.Connector;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 public class Catalogue {
@@ -27,8 +28,16 @@ public class Catalogue {
         Connector.connect();
         con.getProducts();
         clearCatalogue();
+
         products.addAll(con.getProducts());
-        
+
+        Iterator iter = products.iterator();
+        while(iter.hasNext()){
+            Product p = (Product) iter.next();
+            p.setAmmount(con.getAmmountByID(p.getID()));
+        }
+
+
 
         Connector.close();
         
@@ -47,7 +56,7 @@ public class Catalogue {
 
         con.clearDB();
         for (Product p:productsAux){
-            con.addProduct((GenericProduct)p);
+            con.addProduct((GenericProduct)p,10);
         }
         con.showProducts();
         Connector.close();

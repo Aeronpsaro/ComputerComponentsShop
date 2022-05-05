@@ -18,7 +18,10 @@ public class AddCommand extends FrontCommand {
     public void process() throws ServletException, IOException {
         Product product = getProduct(Integer.parseInt(request.getParameter("product")));
         Cart cart = (Cart) request.getSession().getAttribute("cart");
+        
+        
         cart.add(product);
+        
         con.close();
         redirect("/Cart.jsp");
     }
