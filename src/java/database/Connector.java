@@ -34,7 +34,6 @@ public class Connector {
 
 
     static{
-        connect();
         INSTANCE = new Connector(); 
     }
 
@@ -46,6 +45,7 @@ public class Connector {
         }
         try{
             CONNECT = DriverManager.getConnection("JDBC:sqlite:" + URL);
+            System.out.println("conectado");
         }catch(SQLException ex) {
             System.out.println("conexion fallida");
         }

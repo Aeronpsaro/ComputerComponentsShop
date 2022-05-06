@@ -9,14 +9,16 @@ import model.Product;
 
 public class AddCommand extends FrontCommand {
     Connector con = Connector.getConector();
+    
 
     private Product getProduct(int ID) {
-        con.connect();
+
         return con.getProductByID(ID);
     }
     
     @Override
     public void process() throws ServletException, IOException {
+        Connector.connect();
         Product product = getProduct(Integer.parseInt(request.getParameter("product")));
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         //Map<Product, Integer> ammounts = cart.getAmmounts() ;       
@@ -30,7 +32,7 @@ public class AddCommand extends FrontCommand {
             cart.add(product);
         }
 
-        con.close();
+        Connector.close();
         redirect("/Cart.jsp");
     }
 }

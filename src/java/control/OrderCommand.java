@@ -25,14 +25,14 @@ public class OrderCommand extends FrontCommand {
         int[] productIDs = productArray.mapToInt(Product::getID).toArray();
         int[] productAmmounts = productIntegerAmmounts.mapToInt(Integer::intValue).toArray();
 
-        /*for(int i = 0; i<productIDs.length; i++){
+        for(int i = 0; i<productIDs.length; i++){
             for(Product p:catalogue.getProducts()){
                 if(p.getID() == productIDs[i]){
                     p.setAmmount(p.getAmmount() - productAmmounts[i]);
                     connector.reduceStock(productIDs[i], productAmmounts[i]);
                 }
             }
-        }*/
+        }
 
         connector.addOrder(0, productIDs, productAmmounts);
         Connector.close();

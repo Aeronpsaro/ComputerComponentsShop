@@ -21,7 +21,7 @@ public class RemoveOrderCommand extends FrontCommand {
         Order ord = null;
         
 
-        /*for(Order order:con.getOrders()){
+        for(Order order:con.getOrders()){
             if(order.getId() == orderID) ord = order;
         }
 
@@ -35,7 +35,7 @@ public class RemoveOrderCommand extends FrontCommand {
                     con.reduceStock(items.get(i), ammounts.get(i));
                 }
             }
-        }*/
+        }
         
 
         con.removeOrder(orderID);

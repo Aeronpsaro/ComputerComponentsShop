@@ -29,7 +29,6 @@
                 Connector.connect();
                 int userID = 0;
                 List<Order>orders = connector.getOrders(userID);
-                Connector.close();
                 for (Order order:orders) {%>
             <ul>
                 <h1>Pedido <%=order.getId()%></h1>
@@ -40,7 +39,7 @@
                 </form>
                 <%
                     Iterator ammounts = order.getAmmounts().iterator();
-                    Connector.connect();
+                    
                     for (int productID: order.getItems()) {
                         Product product = connector.getConector().getProductByID(productID);
                 %>
