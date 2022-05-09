@@ -27,7 +27,7 @@
                 <input type="submit" style="display: none" />
                 <input type="hidden" name="command" value="SearchFiltersCommand">
                 <input style="width:80vw" class="center" id="texto" type="text" name="query" placeholder="Buscar">
-                <section id="filtros">
+                <section id="filtros" style="float: left">
                     <select name="type">
                         <option>Cualquiera</option>
                         <option>Teclado</option>
@@ -35,8 +35,8 @@
                         <option>Pantalla</option>
                     </select>
                     <label class="input"><input type="checkbox" id="cbox2" value="hideNoStock" name="stockFilter">Ocultar productos sin Stock</label>
-                    <input name="minPrice" type="range" min="0" value="0" max="1000" step="10">
-                    <input name="maxPrice" type="range" min="0" value="100" max="1000" step="10">
+                    <div><span style="float:left">0€</span><input name="minPrice" type="range" min="0" value="0" max="200" step="1"><span style="float:right">200€</span></div>
+                    <div><span style="float:left">0€</span><input name="maxPrice" type="range" min="0" value="100" max="200" step="1"><span style="float:right">200€</span></div>
                 </section>
                 <button id="searchButton" style="float:right">Buscar</button>
             </form>

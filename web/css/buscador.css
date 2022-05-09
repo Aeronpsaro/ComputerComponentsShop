@@ -4,8 +4,9 @@
     background-color: rgb(51, 138, 149);
     padding-right: 50px;
     padding-bottom: 20px;
-    width: 15em;
-    margin-top: 20px;
+    width: 21.5em;
+    margin-top: 0;
+    margin-right: 1em;
     padding-left: 2em;
 }
 
@@ -15,10 +16,17 @@
 
 .center {
   align-content: center;
+  margin: 0 auto;
 }
 
 #searchButton {
     text-align: center;
     align-content: center;
     font-size: xx-large;
+    margin-right: 1em;
+}
+
+section {
+    padding: 1em;
+    margin-top: 0;
 }
