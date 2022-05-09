@@ -5,7 +5,13 @@
 <header>
     <ul id="encabezado">
         <li id="fotoLogoli"><a href="Catalogue.jsp"><img style="border-radius:1em" id="fotologo" src="img\logo.jpeg" alt="menu" height="80px"></a></li>
-        <li id="buscar"><form action="" method="post"><input id="texto" type="text" name="buscar" placeholder="Buscar"></form></li>
+        <li id="buscar">
+            <form action="FrontServlet" method="post">
+                <input type="submit" style="display: none" />
+                <input type="hidden" name="command" value="SearchCommand">
+                <input id="texto" type="text" name="query" placeholder="Buscar">
+            </form>
+        </li>
         <nav id="buscador">
         <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Inicio</a></li>
         <li><a class="vinculo" href="gestionarPedido.jsp" style="color: white"> Pedidos</a></li>
@@ -16,10 +22,13 @@
     <div id="encabezado900">
     <ul id="encabezadomediano">
         <li id="fotoLogoli"><a href="Catalogue.jsp"><img id="fotologo" src="img\logo.jpeg" alt="menu" height="60px"></a></li>
-        <li id="buscar"><form action="FrontServlet" method="post">
+        <li id="buscar">
+            <form action="FrontServlet" method="post">
                 <input type="submit" style="display: none" />
                 <input type="hidden" name="command" value="SearchCommand">
-                <input id="texto" type="text" name="query" placeholder="Buscar"></form></li>
+                <input id="texto" type="text" name="query" placeholder="Buscar">
+            </form>
+        </li>
         <nav id="buscador">
     </ul>
     <ul id="links">

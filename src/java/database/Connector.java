@@ -387,8 +387,8 @@ public class Connector {
         Product productAux;
         List<Product> products = new ArrayList<>();
         try {
-            st = CONNECT.prepareStatement("SELECT * FROM products WHERE name=="+queryName);
-            st.execute();
+            st = CONNECT.prepareStatement("SELECT * FROM products WHERE name LIKE '%"+queryName+"%'");
+            result = st.executeQuery();
             while (result.next()) {
 
                 int id = result.getInt("id");
@@ -405,6 +405,8 @@ public class Connector {
 
                 productAux = new GenericProduct(name, description, image, price, brand);
                 productAux.setId(id);
+                productAux.setAmmount(this.getAmmountByID(id));
+                
                 products.add(productAux);
             }
         } catch (SQLException ex) {
