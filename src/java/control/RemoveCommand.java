@@ -11,7 +11,7 @@ public class RemoveCommand extends FrontCommand {
     Connector con = Connector.getConector();
 
     private Product getProduct(int ID) {
-        con.connect();
+        Connector.connect();
         return con.getProductByID(ID);
     }
     
@@ -20,7 +20,7 @@ public class RemoveCommand extends FrontCommand {
         Product product = getProduct(Integer.parseInt(request.getParameter("product")));
         Cart cart = (Cart) request.getSession().getAttribute("cart");
         cart.remove(product);
-        con.close();
+        Connector.close();
         redirect("/Cart.jsp");
     }
     

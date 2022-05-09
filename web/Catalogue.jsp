@@ -15,9 +15,8 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>Computer Components Shop</title>
         <jsp:include page="icon.jsp"/>
-        <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/Catalog.css">
+        <link rel="stylesheet" href="css/Catalog1.css">
         
     </head>
     <body>
@@ -56,7 +55,7 @@
                                                 <p id="añadirCarrito">Añadir al carrito</p>
                                             </div>
                                             <div class="col-auto d-flex align-items-center justify-content-center">
-                                                <image style="width: 2em; height: 2em" src="Assets/CartIcon.png"/>
+                                                <image style="width: 2em; height: 2em" id="carritoCompra" src="Assets/CartIcon.png"/>
                                             </div>
                                         </div>
                                     </button>

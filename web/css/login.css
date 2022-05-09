@@ -1,4 +1,4 @@
-#login{
+article{
     background-color: cornflowerblue;
     display: flex;
     flex-direction: column;
@@ -8,10 +8,12 @@
     margin-left: 35%;
     padding-top: 30px;
     padding-bottom: 50px;  
+    margin-top: 50px;
+    border-radius: 12px;
 }
 
 h1{
-    margin-left: 36%;
+    text-align: center;
 }
 
 input{
@@ -23,27 +25,13 @@ input{
     color: white;
     font-size: 18px;
     border-radius: 12px;
+    float: right;
 }
 
-
-
-@media screen and (min-width:640px) and (max-width:900px) {
-    
-    #login{
-        margin-left: 20%;
-    }
-    
-    h1{
-    margin-left: 36%;
-    }
-}
 
 @media screen and (max-width:640px) {
-    #login{
-        margin-left: 10%;
-    }
-    
-    h1{
-    margin-left: 26%;
+
+    article{
+        margin-left: 20%;
     }
 }

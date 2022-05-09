@@ -17,19 +17,17 @@
         <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
         <title>Computer Components Shop</title>
         <jsp:include page="icon.jsp"/>
-        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/gestionarPedido.css">
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-        
         <main>
             <%
                 Connector connector = Connector.getConector();
                 Connector.connect();
                 int userID = 0;
                 List<Order>orders = connector.getOrders(userID);
-                Connector.close();
                 for (Order order:orders) {%>
             <ul>
                 <h1>Pedido <%=order.getId()%></h1>
@@ -40,7 +38,7 @@
                 </form>
                 <%
                     Iterator ammounts = order.getAmmounts().iterator();
-                    Connector.connect();
+                    
                     for (int productID: order.getItems()) {
                         Product product = connector.getConector().getProductByID(productID);
                 %>

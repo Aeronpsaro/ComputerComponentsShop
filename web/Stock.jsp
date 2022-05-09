@@ -33,7 +33,7 @@
             </section>
             <% for(Product product:catalogue.getProducts()) { %>
             <section>
-                <ul>                  
+                <ul id="productosStock">                  
                     <li> <%=product.getID()%> </li>
                     <li> <%=product.getName()%> </li>
                     <li> <%=product.getPrice()%> </li>

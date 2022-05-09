@@ -33,11 +33,17 @@
     }
     
     #imgProducto{
-        height: 50px;
+        
     }
     
     #agregarcarrito{
         margin-top: 20px;
+    }
+    
+    
+    #agregarcarrito{
+        float: none;
+        margin-left: -20px;
     }
     
 }

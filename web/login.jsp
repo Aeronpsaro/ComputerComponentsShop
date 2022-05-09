@@ -14,7 +14,7 @@
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/signin.css">
+        <link rel="stylesheet" href="css/login.css">
     </head>
     <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>
@@ -23,8 +23,8 @@
             <article>
             <h1>Login</h1>
             <section id="login">
-                <input class="formluario" type="text" placeholder="Usuario" name="usuario">
-                <input class="formluario" type="password" placeholder="Contraseña" name="contraseña">
+                <input class="formulario" type="text" placeholder="Usuario" name="usuario">
+                <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
                 <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
             </section>
             </article>
