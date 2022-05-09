@@ -415,6 +415,42 @@ public class Connector {
         close();
         return products;
     }
+    
+public List<Product> searchByQuery(String query) {
+        connect();
+        ResultSet result = null;
+        PreparedStatement st;
+        Product productAux;
+        List<Product> products = new ArrayList<>();
+        try {
+            st = CONNECT.prepareStatement(query);
+            result = st.executeQuery();
+            while (result.next()) {
+
+                int id = result.getInt("id");
+
+                String name = result.getString("name");
+
+                String description = result.getString("description");
+
+                String image = result.getString("image");
+
+                float price = result.getFloat("price");
+
+                String brand = result.getString("brand");
+
+                productAux = new GenericProduct(name, description, image, price, brand);
+                productAux.setId(id);
+                productAux.setAmmount(this.getAmmountByID(id));
+                
+                products.add(productAux);
+            }
+        } catch (SQLException ex) {
+            Logger.getLogger(Connector.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        close();
+        return products;
+    }
 
 }
 

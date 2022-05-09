@@ -23,63 +23,63 @@
         <jsp:include page="header.jsp"/>
         
         <main>
+            <form action="FrontServlet">
                 <input type="submit" style="display: none" />
-                <input type="hidden" name="command" value="SearchCommand">
-                <input style="float: centre; width:80vw" id="texto" type="text" name="query" placeholder="Buscar">
+                <input type="hidden" name="command" value="SearchFiltersCommand">
+                <input style="width:80vw" class="center" id="texto" type="text" name="query" placeholder="Buscar">
                 <section id="filtros">
-                    <select>
-                    <option>Cualquiera</option>
-                    <option>Teclado</option>
-                    <option>Ratón</option>
-                    <option>Pantalla</option>
+                    <select name="type">
+                        <option>Cualquiera</option>
+                        <option>Teclado</option>
+                        <option>Ratón</option>
+                        <option>Pantalla</option>
                     </select>
-                    <label class="input"><input type="checkbox" id="cbox2" value="second_checkbox"> Filtro2</label>
-                    <input name="minPrice" type="range" min="0" value="10" max="1000" step="10">
-                    <input name="maxPrice" type="range" min="0" value="10" max="1000" step="10">
-                
+                    <label class="input"><input type="checkbox" id="cbox2" value="hideNoStock" name="stockFilter">Ocultar productos sin Stock</label>
+                    <input name="minPrice" type="range" min="0" value="0" max="1000" step="10">
+                    <input name="maxPrice" type="range" min="0" value="100" max="1000" step="10">
                 </section>
+                <button id="searchButton" style="float:right">Buscar</button>
+            </form>
             <div class="row" style="margin-left: 4em; margin-right: 4em">
-            <%for (Product product : (List<Product>) request.getSession().getAttribute("queryResults")) {%>
-            <% if(product.getAmmount()>0){ %>
-                <div class="col-3">
-                    <div class="productCard">
-                        <div style="margin: 2em;">
-                            <form onclick="submit()" action="FrontServlet" method="POST">
-                                <input type="hidden" name="command" value="SeeProductCommand"/>
-                                <input type="hidden" name="product" value="<%=product.getID()%>"/>
-                                <div class="row">
-                                    <img id="imgProducto" src="<%= product.getImageURL() %>"/>
-                                </div>
-                                <div id="infodelproducto" class="row">
-                                    <div id="nombreproducto" class="col">
-                                        <%=product.getName()%>
+                <%for (Product product : (List<Product>) request.getSession().getAttribute("queryResults")) {%>
+                    <div class="col-sm-6 col-md-4 col-lg-3">
+                        <div class="productCard">
+                            <div style="margin: 2em;">
+                                <form onclick="submit()" action="FrontServlet" method="POST">
+                                    <input type="hidden" name="command" value="SeeProductCommand"/>
+                                    <input type="hidden" name="product" value="<%=product.getID()%>"/>
+                                    <div class="row">
+                                        <img id="imgProducto" src="<%= product.getImageURL() %>"/>
                                     </div>
-                                    <div id="precioproducto" class="col"">
-                                        <%=String.format("%.2f", product.getPrice())%>€
-                                    </div>
-                                </div>
-                            </form>
-                            <div class="row">
-                                <form action="FrontServlet" method="POST">
-                                    <input type="hidden" name="command" value="AddCommand">
-                                    <input type="hidden" name="product" value="<%=product.getID()%>">
-                                    <button id="agregarcarrito" type="submit"">
-                                        <div class="row gx-0">
-                                            <div  class="col-auto d-flex align-items-center justify-content-center">
-                                                <p id="añadirCarrito">Añadir al carrito</p>
-                                            </div>
-                                            <div class="col-auto d-flex align-items-center justify-content-center">
-                                                <image style="width: 2em; height: 2em" src="Assets/CartIcon.png"/>
-                                            </div>
+                                    <div id="infodelproducto" class="row">
+                                        <div id="nombreproducto" class="col">
+                                            <%=product.getName()%>
                                         </div>
-                                    </button>
+                                        <div id="precioproducto" class="col"">
+                                            <%=String.format("%.2f", product.getPrice())%>€
+                                        </div>
+                                    </div>
                                 </form>
+                                <div class="row">
+                                    <form action="FrontServlet" method="POST">
+                                        <input type="hidden" name="command" value="AddCommand">
+                                        <input type="hidden" name="product" value="<%=product.getID()%>">
+                                        <button id="agregarcarrito" type="submit"">
+                                            <div class="row gx-0">
+                                                <div  class="col-auto d-flex align-items-center justify-content-center">
+                                                    <p id="añadirCarrito">Añadir al carrito</p>
+                                                </div>
+                                                <div class="col-auto d-flex align-items-center justify-content-center">
+                                                    <image style="width: 2em; height: 2em" id="carritoCompra" src="Assets/CartIcon.png"/>
+                                                </div>
+                                            </div>
+                                        </button>
+                                    </form>
+                                </div>
                             </div>
                         </div>
                     </div>
-                </div>
-            <% } %>
-        <% } %>
+                <% } %>
             </div>
         </main>
     </body>

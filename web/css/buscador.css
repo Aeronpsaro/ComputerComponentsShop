@@ -4,7 +4,7 @@
     background-color: rgb(51, 138, 149);
     padding-right: 50px;
     padding-bottom: 20px;
-    width: 150px;
+    width: 15em;
     margin-top: 20px;
     padding-left: 2em;
 }
@@ -13,3 +13,12 @@
     margin-top: 20px;
 }
 
+.center {
+  align-content: center;
+}
+
+#searchButton {
+    text-align: center;
+    align-content: center;
+    font-size: xx-large;
+}
