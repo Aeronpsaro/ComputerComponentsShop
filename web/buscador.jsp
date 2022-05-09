@@ -23,12 +23,19 @@
         <jsp:include page="header.jsp"/>
         
         <main>
+                <input type="submit" style="display: none" />
+                <input type="hidden" name="command" value="SearchCommand">
+                <input style="float: centre; width:80vw" id="texto" type="text" name="query" placeholder="Buscar">
                 <section id="filtros">
-                    <label class="input"><input type="checkbox" id="cbox1" value="first_checkbox"> Filtro1</label>
+                    <select>
+                    <option>Cualquiera</option>
+                    <option>Teclado</option>
+                    <option>Ratón</option>
+                    <option>Pantalla</option>
+                    </select>
                     <label class="input"><input type="checkbox" id="cbox2" value="second_checkbox"> Filtro2</label>
-                    <label class="input"><input type="checkbox" id="cbox3" value="third_checkbox"> Filtro3</label>
-                    <label class="input" ><input type="checkbox" id="cbox4" value="fourth_checkbox"> Filtro4</label>
-                    <label class="input"><input type="checkbox" id="cbox5" value="fifth_checkbox"> Filtro5</label>
+                    <input name="minPrice" type="range" min="0" value="10" max="1000" step="10">
+                    <input name="maxPrice" type="range" min="0" value="10" max="1000" step="10">
                 
                 </section>
             <div class="row" style="margin-left: 4em; margin-right: 4em">
