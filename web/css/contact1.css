@@ -1,0 +1,28 @@
+#contacto{
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px;
+    margin-right: 100px;
+}
+
+article{
+    display: flex;
+    margin-top: 30px;
+}
+
+#siguenos{
+    margin-top: 50px;
+}
+
+@media screen and (max-width:900px) {
+    article{
+        display: flex;
+        flex-direction: column;
+    }
+    
+    #ubicacion{
+        margin-left: 50px;
+        margin-top: 30px;
+    }
+    
+}

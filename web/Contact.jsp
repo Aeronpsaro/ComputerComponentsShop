@@ -14,7 +14,7 @@
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/Contact.css">
+        <link rel="stylesheet" href="css/contact1.css">
         
     </head>
     <body>
@@ -52,7 +52,6 @@
                         <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3519.7914187344786!2d-15.462136033959228!3d28.09190457350012!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0xc409449d1c5b7af%3A0x54ff94cdfe1d1852!2sInform%C3%A1tica%20Y%20Equipamientos%20M%C3%A9dicos%20De%20Canarias%20S%20A%20L!5e0!3m2!1ses!2ses!4v1651831235031!5m2!1ses!2ses" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
                     </section>
                 </article>
-             
         </main>
         
     </body>
