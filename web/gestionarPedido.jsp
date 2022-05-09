@@ -31,11 +31,18 @@
                 for (Order order:orders) {%>
             <ul>
                 <h1>Pedido <%=order.getId()%></h1>
-                <form action="FrontServlet" method="POST" onclick="submit()">
-                    <input type="hidden" name="command" value="RemoveOrderCommand">
-                    <input type="hidden" name="order" value="<%=order.getId()%>">
-                    <img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="20px">
-                </form>
+                <div id="orderControls" style="float:right">
+                    <form action="FrontServlet" method="POST" onclick="submit()">
+                        <input type="hidden" name="command" value="RemoveOrderCommand">
+                        <input type="hidden" name="order" value="<%=order.getId()%>">
+                        <div><img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="70px">Eliminar pedido</div>
+                    </form>
+                        <form action="FrontServlet" method="POST" onclick="submit()">
+                        <input type="hidden" name="command" value="ReturnToCartCommand">
+                        <input type="hidden" name="order" value="<%=order.getId()%>">
+                        <button>Devolver el pedido al carrito</button>
+                    </form>
+                </div>
                 <%
                     Iterator ammounts = order.getAmmounts().iterator();
                     
