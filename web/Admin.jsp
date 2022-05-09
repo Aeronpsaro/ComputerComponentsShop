@@ -18,16 +18,17 @@
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-    </body>
     
-    <main>
-        <h1>Página del Administrador</h1>
-        
-        <ul id="menuAdmin">
-            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Stock.jsp'">Inventario</button></li>
-            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Orders.jsp'">Pedidos</button></li>
-            <li class="botonesAdmin"><button type="button" onclick="window.location.href='Users.jsp'">Usuarios</button></li>
-        </ul>
+    
+        <main>
+            <h1>Página del Administrador</h1>
 
-    </main>
+            <ul id="menuAdmin">
+                <li class="botonesAdmin"><button type="button" onclick="window.location.href='Stock.jsp'">Inventario</button></li>
+                <li class="botonesAdmin"><button type="button" onclick="window.location.href='Orders.jsp'">Pedidos</button></li>
+                <li class="botonesAdmin"><button type="button" onclick="window.location.href='Users.jsp'">Usuarios</button></li>
+            </ul>
+
+        </main>
+    </body>
 </html>

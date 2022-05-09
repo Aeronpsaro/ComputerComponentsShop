@@ -1,3 +1,21 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 may. 2022, 11:55:23
+    Author     : alber
+*/
+
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 9 may. 2022, 11:34:34
+    Author     : alber
+*/
+
 #encabezado{
     list-style-type: none;
     display: flex;
@@ -6,7 +24,9 @@
     background-color: rgb(51, 138, 149);
     height: 100px;
 }
-
+body{
+        background-color: rgb(131, 165, 194);
+}
 main{
     background-color: rgb(131, 165, 194);
     height: auto;

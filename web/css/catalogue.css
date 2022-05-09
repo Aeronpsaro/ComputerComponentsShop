@@ -1,52 +1,33 @@
-header{
-    width: 100%;
-    background-color: rgb(51, 138, 149);
-    padding-left: 0px;
-    margin-top: 0px;
-    border:solid;
+#precioproducto{
+    text-align: right;
 }
 
-#encabezado{
-    list-style-type: none;
-    display: flex;
-    padding-left: 0px;
-    margin-top: 0px;
-    align-items: center;
-
+#agregarcarrito{
+    float: right;
 }
 
-
-
-#buscar{
-    margin-left: 50px;
+@media screen and (min-width:640px) and (max-width:900px) {
+    
+    #precioproducto{
+        text-align: left;
+        width: auto;
+    }
+    
+    
+    #agregarcarrito{
+        float: none;
+    }
 }
 
-#buscador{
-    display: flex;
-    margin-left: 200px;
-    align-items: center;
-}
+@media screen and (max-width:640px) {
 
-.vinculo{
-    margin-right: 100px;
-}
-
-h1{
-    margin-left: 20px;
-}
-
-main{
-    background-color: rgb(131, 165, 194);
-    height: auto;
-    margin-top: -20px;
-    padding-top: 10px;
-    padding-bottom: 100px;
-}
-
-#encabezadomediano,#links{
-    display:none;
-}
-
-@media screen and (min-width:640px) and (max-width:900px){
+    #agregarcarrito{
+        margin-top: 20px;
+    }
+    
+    #agregarcarrito{
+        float: none;
+        margin-left: -20px;
+    }
     
 }

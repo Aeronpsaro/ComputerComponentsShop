@@ -16,7 +16,7 @@
         <title>Computer Components Shop</title>
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="css/Catalog1.css">
+        <link rel="stylesheet" href="css/catalogue.css">
         
     </head>
     <body>
@@ -27,7 +27,7 @@
         <div class="row" style="margin-left: 4em; margin-right: 4em">
         <% for(Product product:catalogue.getProducts()) { %>
             <% if(product.getAmmount()>0){ %>
-                <div class="col-3">
+                <div class="col-sm-6 col-md-4 col-lg-3">
                     <div class="productCard">
                         <div style="margin: 2em;">
                             <form onclick="submit()" action="FrontServlet" method="POST">
