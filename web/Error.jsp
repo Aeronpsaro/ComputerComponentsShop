@@ -14,6 +14,6 @@
     </head>
     <body>
         <jsp:include page="header.jsp"/>
-        <h1>Error 404</h1>
+        <h1 class="prompt">Error 404: comando inexistente.</h1>
     </body>
 </html>

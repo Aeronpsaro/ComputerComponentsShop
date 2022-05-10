@@ -13,7 +13,7 @@
         <jsp:include page="header.jsp"/>
         
         <main>
-            <h1>¡Su petición ha sido procesada con éxito! Ha comprado por un valor de <%=request.getSession().getAttribute("price")%></h1>
+            <h1 class="prompt">¡Su petición ha sido procesada con éxito! Ha comprado por un valor de <%=request.getSession().getAttribute("price")%>€</h1>
         </main>
     </body>
 </html>
