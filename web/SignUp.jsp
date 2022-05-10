@@ -1,9 +1,3 @@
-<%-- 
-    Document   : login
-    Created on : 22 mar. 2022, 13:19:12
-    Author     : alber
---%>
-
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -25,8 +19,8 @@
             <section id="login">
                 <input class="formulario" type="text" placeholder="Usuario" name="usuario">
                 <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
-                <span> ¿Aún no tienes cuenta? <a style="color: greenyellow" href="./SignUp.jsp"> ¡Regístrate! </a></span>
-                <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
+                <input class="formulario" type="password" placeholder="Repetir Contraseña" name="contraseña">
+                <input id="botonIniciarSesion" type="submit" value=">Regístrate">
             </section>
             </article>
         </main>

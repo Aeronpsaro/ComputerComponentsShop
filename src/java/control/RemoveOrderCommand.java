@@ -32,7 +32,7 @@ public class RemoveOrderCommand extends FrontCommand {
             for(Product p:catalogue.getProducts()){
                 if(p.getID() == items.get(i)){
                     p.setAmmount(p.getAmmount() + ammounts.get(i));
-                    con.reduceStock(items.get(i), ammounts.get(i));
+                    con.increaseStock(items.get(i), ammounts.get(i));
                 }
             }
         }
