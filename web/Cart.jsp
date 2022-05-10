@@ -12,6 +12,11 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="css/cart.css">
         <link rel="stylesheet" href="styles.css">
+        <%if (request.getAttribute("notAuthError") != null) {%>
+            <script>
+                this.window.alert("No se ha iniciado sesión");
+            </script>
+        <%}%>
     </head>
     <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>

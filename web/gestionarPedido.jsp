@@ -26,7 +26,7 @@
             <%
                 Connector connector = Connector.getConector();
                 Connector.connect();
-                int userID = 0;
+                int userID = (Integer)request.getSession().getAttribute("uid");
                 List<Order>orders = connector.getOrders(userID);
                 for (Order order:orders) {%>
             <ul>

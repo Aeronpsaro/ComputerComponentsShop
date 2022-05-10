@@ -33,8 +33,12 @@ public class OrderCommand extends FrontCommand {
                 }
             }
         }
-
-        connector.addOrder(0, productIDs, productAmmounts);
+        int uid = (Integer)request.getSession().getAttribute("uid");
+        if(uid < 0){
+            request.setAttribute("notAuthError", true);
+            redirect("/Cart.jsp");
+        }
+        connector.addOrder(uid, productIDs, productAmmounts);
         Connector.close();
 
         request.getSession().setAttribute("price", cart.getPrice());
