@@ -27,10 +27,10 @@
                         <section>
                             <h2>Contacto</h2>
                             <ul>
-                                <li>Teléfono: +34 6652428273</li>
-                                <li>Correo electrónico: computercomponentshop@info.com</li>
-                                <li>Fax: 9285457523</li>
-                                <li>Redes Sociales: ComputerComponentShop</li>
+                                <li>Teléfono: <a href="tel:+34777777777">+34 777777777</a></li>
+                                <li>Correo electrónico: <a href="mailto:mail@ComputerComponentsShop.com">mail@ComputerComponentsShop.com</a></li>
+                                <li>Fax: <a href="tel:+34928777777">+34 928777777</a></li>
+                                <li>Redes Sociales: ComputerComponentsShop</li>
                             </ul>
                         </section>
                         <section id="siguenos">
