@@ -23,10 +23,12 @@
             <article>
             <h1>Inicia sesión</h1>
             <section id="login">
-                <input class="formulario" type="text" placeholder="Usuario" name="usuario">
-                <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
-                <span> ¿Aún no tienes cuenta? <a style="color: greenyellow" href="./SignUp.jsp"> ¡Regístrate! </a></span>
-                <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
+                <form action="FrontServlet" method="POST">
+                    <input class="formulario" type="text" placeholder="Usuario" name="usuario">
+                    <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
+                    <span> ¿Aún no tienes cuenta? <a style="color: greenyellow" href="./SignUp.jsp"> ¡Regístrate! </a></span>
+                    <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
+                </form>
             </section>
             </article>
         </main>
