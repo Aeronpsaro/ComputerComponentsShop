@@ -454,21 +454,39 @@ public class Connector {
     }
 
     //usuarios
-    public void signUp(String name, String passwd){
+    public boolean signUp(String name, String passwd){
         try{
             PreparedStatement st = CONNECT.prepareStatement("insert into users (name, password) values (?,?)");
             st.setString(1,name);
             st.setString(2,Integer.toString(passwd.hashCode()));
             st.execute();
-        } catch (SQLException ex) {
+            signIn(name,passwd);
+            return true;
+        } catch (SQLException ex) { 
             System.err.println(ex.getMessage());
+            return false;
         }
-
-        signIn(name,passwd);
     }
 
-    private void signIn(String name, String passwd) {
-        
+    private int signIn(String name, String passwd) {
+        ResultSet result = null;
+        try{
+            PreparedStatement st = CONNECT.prepareStatement("select count(*) from users where name = " + "'" + name + "'");
+            result = st.executeQuery();
+            if(result.getInt("count(*)")>0){
+                st = CONNECT.prepareStatement("select * from users where name = " + "'" + name + "'");
+                result = st.executeQuery();
+                int uid = result.getInt("id");
+                result.getString("passwd");
+                if(passwd.equals(Integer.toString(result.getString("passwd").hashCode()))){
+                    return uid;
+                }
+            }
+            return -1;   
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+            return -1;
+        }
     }
 
 }
