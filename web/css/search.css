@@ -1,3 +1,12 @@
+/*
+Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
+Click nbfs://nbhost/SystemFileSystem/Templates/JSP_Servlet/CascadeStyleSheet.css to edit this template
+*/
+/* 
+    Created on : 10 may. 2022, 13:51:19
+    Author     : alber
+*/
+
 #filtros{
     display: flex;
     flex-direction: column;
@@ -9,6 +18,7 @@
     margin-right: 1em;
     padding-left: 2em;
 }
+
 
 .input{
     margin-top: 20px;
