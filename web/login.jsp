@@ -15,6 +15,11 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/login.css">
+        <%if (request.getAttribute("loginError") != null) {%>
+            <script>
+                this.window.alert("Usuario o contraseña incorrectos");
+            </script>
+        <%}%>
     </head>
     <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>
@@ -24,8 +29,9 @@
             <h1>Inicia sesión</h1>
             <section id="login">
                 <form action="FrontServlet" method="POST">
+                    <input type="hidden" name="command" value="SignInCommand">
                     <input class="formulario" type="text" placeholder="Usuario" name="usuario">
-                    <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
+                    <input class="formulario" type="password" placeholder="Contraseña" name="contrasenna">
                     <span> ¿Aún no tienes cuenta? <a style="color: greenyellow" href="./SignUp.jsp"> ¡Regístrate! </a></span>
                     <input id="botonIniciarSesion" type="submit" value="Iniciar Sesión">
                 </form>

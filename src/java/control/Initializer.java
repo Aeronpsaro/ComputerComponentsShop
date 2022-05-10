@@ -30,6 +30,7 @@ public class Initializer extends HttpServlet {
         //catalogue.testInitializeDB(); //vacía el catalogo y la base de datos y los llena de 20 cajas
 
         request.getSession().setAttribute("cart", new Cart());
+        request.getSession().setAttribute("uid", -1);
 
         RequestDispatcher dispatcher =
         request.getRequestDispatcher("/Catalogue.jsp");

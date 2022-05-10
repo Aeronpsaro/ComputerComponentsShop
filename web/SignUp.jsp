@@ -26,6 +26,12 @@
         }
 
     </script>
+    
+    <%if (request.getAttribute("signUpError") != null) {%>
+            <script>
+                this.window.alert("Ya existe un usuario con ese nombre");
+            </script>
+    <%}%>
     </head>
     <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>
@@ -33,7 +39,7 @@
         <main>
             <article>
             <h1>Regístrate</h1>
-            <form id="newUser" action="">
+            <form id="newUser" action="FrontServlet">
                 <input type="hidden" name="command" value="SignUpCommand">
                 <input id="newUserName" placeholder="Usuario" minlength="3" type="username" required name="user">
                 <input required id="pswd1" placeholder="Contraseña" minlength="8" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pswd1">

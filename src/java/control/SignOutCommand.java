@@ -7,7 +7,6 @@ public class SignOutCommand extends FrontCommand {
 
     @Override
     public void process() throws ServletException, IOException {
-        //Connector.signOut();
         request.getSession().setAttribute("uid", -1);
         redirect("/login.jsp");
     }

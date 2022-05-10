@@ -464,7 +464,6 @@ public class Connector {
             close();
             return signIn(name,passwd);
         } catch (SQLException ex) { 
-            System.err.println(ex.getMessage());
             close();
             return -1;
         }

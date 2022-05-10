@@ -15,11 +15,11 @@
         <nav id="buscador">
         <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Inicio</a></li>
         <li><a class="vinculo" href="gestionarPedido.jsp" style="color: white"> Pedidos</a></li>
-        <%if ((int)request.getSession().getAttribute("uid")>=0) {%>
+        <%if (((Integer)request.getSession().getAttribute("uid")).intValue() == -1) {%>
             <li><a class="vinculo" href="login.jsp" style="color: white"> Iniciar sesión</a></li>
         <%} else {%>
             <li>
-                <form action="FrontServlet"><input type="hidden" name="command" value="SignOutCommand"><a class="vinculo" onclick="submit()" style="color: white"> Cerrar sesión</a></form>
+                <form id="SignOutForm" action="FrontServlet"><input type="hidden" name="command" value="SignOutCommand"><a class="vinculo" onclick="document.getElementById('SignOutForm').submit()" style="color: white"> Cerrar sesión</a></form>
             </li>
         <%}%>
         <li><a class="vinculo" href="Contact.jsp" style="color: white"> Contacto</a></li>
@@ -41,7 +41,13 @@
     <ul id="links">
         <li><a class="vinculo" href="Catalogue.jsp" style="color: white"> Inicio</a></li>
         <li><a class="vinculo" href="gestionarPedido.jsp" style="color: white"> Pedidos</a></li>
-        <li><a class="vinculo" href="login.jsp" style="color: white"> Iniciar sesión</a></li>
+        <%if (((Integer)request.getSession().getAttribute("uid")).intValue() == -1) {%>
+            <li><a class="vinculo" href="login.jsp" style="color: white"> Iniciar sesión</a></li>
+        <%} else {%>
+            <li>
+                <form id="SignOutForm" action="FrontServlet"><input type="hidden" name="command" value="SignOutCommand"><a class="vinculo" onclick="document.getElementById('SignOutForm').submit()" style="color: white"> Cerrar sesión</a></form>
+            </li>
+        <%}%>
         <li><a class="vinculo" href="Contact.jsp" style="color: white"> Contacto</a></li>
         <li id="carro"><a class="vinculo" href="Cart.jsp"><img id="imgCarrito" src="img\carrito.png" alt="menu" height="30px"></a></li>                    </nav>
     </ul>
