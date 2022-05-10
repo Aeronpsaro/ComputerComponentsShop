@@ -298,7 +298,7 @@ public class Connector {
         Order auxOrder = null;
         List<Product> products= new ArrayList<>();
         try {
-            PreparedStatement st = CONNECT.prepareStatement("select * from orders");
+            PreparedStatement st = CONNECT.prepareStatement("select * from orders where user_id = "+userId);
             result = st.executeQuery();
             while (result.next()) {
                 

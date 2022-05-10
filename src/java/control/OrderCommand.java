@@ -37,6 +37,7 @@ public class OrderCommand extends FrontCommand {
         if(uid < 0){
             request.setAttribute("notAuthError", true);
             redirect("/Cart.jsp");
+            return;
         }
         connector.addOrder(uid, productIDs, productAmmounts);
         Connector.close();
