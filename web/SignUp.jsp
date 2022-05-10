@@ -9,6 +9,23 @@
         <link rel="stylesheet" href="css/main.css">
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/login.css">
+        <script>
+        function matchPassword() {
+            document.getElementById('pswd1')
+                .setCustomValidity('');
+            var password = document.getElementById("pswd1").value;
+            var passwordRepeat = document.getElementById("pswdRepeat").value;
+            if (document.getElementById("newUser").checkValidity()) {
+                if (password != passwordRepeat) {
+                    document.getElementById('pswd1')
+                        .setCustomValidity('Las contraseñas deben coincidir.');
+                } else {
+                    alert("¡Gracias por confiar en nosotros!");
+                }
+            }
+        }
+
+    </script>
     </head>
     <body style="background-color: #83a5c2">
         <jsp:include page="header.jsp"/>
@@ -16,12 +33,13 @@
         <main>
             <article>
             <h1>Login</h1>
-            <section id="login">
-                <input class="formulario" type="text" placeholder="Usuario" name="usuario">
-                <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
-                <input class="formulario" type="password" placeholder="Repetir Contraseña" name="contraseña">
-                <input id="botonIniciarSesion" type="submit" value=">Regístrate">
-            </section>
+            <form id="newUser" action="">
+                <input type="hidden" name="command" value="SignUpCommand">
+                <input id="newUserName" placeholder="Usuario" minlength="3" type="username" required name="user">
+                <input required id="pswd1" placeholder="Contraseña" minlength="8" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pswd1">
+                <input required id="pswdRepeat" placeholder="Confirme contraseña" minlength="8" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pswd2">
+                <button type="submit" onclick="matchPassword()">Regístrate</button>
+             </form>  
             </article>
         </main>
     </body>
