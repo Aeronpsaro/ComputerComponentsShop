@@ -16,7 +16,7 @@
         <jsp:include page="icon.jsp"/>
         <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="css/Catalog1.css">
-        <link rel="stylesheet" href="css/buscador.css">
+        <link rel="stylesheet" href="css/search.css">
         
     </head>
     <body>
@@ -26,7 +26,7 @@
             <form action="FrontServlet">
                 <input type="submit" style="display: none" />
                 <input type="hidden" name="command" value="SearchFiltersCommand">
-                <input style="width:80vw" class="center" id="texto" type="text" name="query" placeholder="Buscar">
+                <input style="width:50vw" class="center" id="texto" type="text" name="query" placeholder="Buscar">
                 <section id="filtros" style="float: left">
                     <select name="type">
                         <option>Cualquiera</option>
