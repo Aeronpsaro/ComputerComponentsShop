@@ -32,7 +32,7 @@
         
         <main>
             <article>
-            <h1>Login</h1>
+            <h1>Regístrate</h1>
             <form id="newUser" action="">
                 <input type="hidden" name="command" value="SignUpCommand">
                 <input id="newUserName" placeholder="Usuario" minlength="3" type="username" required name="user">
@@ -40,6 +40,9 @@
                 <input required id="pswdRepeat" placeholder="Confirme contraseña" minlength="8" type="password" pattern="(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,}" name="pswd2">
                 <button type="submit" onclick="matchPassword()">Regístrate</button>
              </form>  
+            <div id="message">
+                <span style="font-size:x-small">La contraseña debe contener al menos 8 caracteres, una mayúscula, una minúscula y un número.</span>
+              </div>
             </article>
         </main>
     </body>
