@@ -21,7 +21,7 @@
         
         <main>
             <article>
-            <h1>Login</h1>
+            <h1>Inicia sesión</h1>
             <section id="login">
                 <input class="formulario" type="text" placeholder="Usuario" name="usuario">
                 <input class="formulario" type="password" placeholder="Contraseña" name="contraseña">
