@@ -379,7 +379,8 @@ public class Connector {
             System.err.println(ex.getMessage());
         }
     }
-    
+
+    //search
     public List<Product> searchByName(String queryName) {
         connect();
         ResultSet result = null;
@@ -416,7 +417,7 @@ public class Connector {
         return products;
     }
     
-public List<Product> searchByQuery(String query) {
+    public List<Product> searchByQuery(String query) {
         connect();
         ResultSet result = null;
         PreparedStatement st;
@@ -450,6 +451,24 @@ public List<Product> searchByQuery(String query) {
         }
         close();
         return products;
+    }
+
+    //usuarios
+    public void signUp(String name, String passwd){
+        try{
+            PreparedStatement st = CONNECT.prepareStatement("insert into users (name, password) values (?,?)");
+            st.setString(1,name);
+            st.setString(2,Integer.toString(passwd.hashCode()));
+            st.execute();
+        } catch (SQLException ex) {
+            System.err.println(ex.getMessage());
+        }
+
+        signIn(name,passwd);
+    }
+
+    private void signIn(String name, String passwd) {
+        
     }
 
 }
