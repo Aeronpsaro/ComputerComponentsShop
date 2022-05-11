@@ -9,7 +9,7 @@ import model.Catalogue;
 import model.Order;
 import model.Product;
 
-public class RemoveOrderCommand extends FrontCommand {
+public class AdminRemoveOrderCommand extends FrontCommand {
     
     @Override
     public void process() throws ServletException, IOException {
@@ -41,7 +41,7 @@ public class RemoveOrderCommand extends FrontCommand {
         con.removeOrder(orderID);
 
         Connector.close();
-        redirect("/gestionarPedido.jsp");
+        redirect("/Orders.jsp");
     }
 
 }

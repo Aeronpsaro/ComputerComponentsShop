@@ -34,7 +34,7 @@ public class OrderCommand extends FrontCommand {
             }
         }
         int uid = (Integer)request.getSession().getAttribute("uid");
-        if(uid < 0){
+        if(uid == -1){
             request.setAttribute("notAuthError", true);
             redirect("/Cart.jsp");
             return;

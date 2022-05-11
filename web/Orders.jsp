@@ -4,6 +4,11 @@
     Author     : alber
 --%>
 
+<%@page import="model.Product"%>
+<%@page import="java.util.Iterator"%>
+<%@page import="model.Order"%>
+<%@page import="java.util.List"%>
+<%@page import="database.Connector"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -24,10 +29,46 @@
            
             <h1>Pedidos</h1>
             
-        <section id="titulos">
-                <h2>Nombre del usuario</h2>
-                <h2>ID Pedido</h2>
-            </section>
+            <%
+                Connector connector = Connector.getConector();
+                Connector.connect();
+                //int userID = (Integer)request.getSession().getAttribute("uid");
+                List<Order>orders = connector.getOrders();
+                for (Order order:orders) {%>
+            <ul>
+                <h1>Pedido <%=order.getId()%> | Usuario <%=order.getUser_id()%></h1>
+                <div id="orderControls" style="float:right">
+                    <form action="FrontServlet" method="POST" onclick="submit()">
+                        <input type="hidden" name="command" value="AdminRemoveOrderCommand">
+                        <input type="hidden" name="order" value="<%=order.getId()%>">
+                        <div><img class="deleteProduct" src="https://upload.wikimedia.org/wikipedia/commons/f/f5/Octagon_delete.svg" alt="" height="70px">Eliminar pedido</div>
+                    </form>
+                </div>
+                <%
+                    Iterator ammounts = order.getAmmounts().iterator();
+                    
+                    for (int productID: order.getItems()) {
+                        Product product = connector.getConector().getProductByID(productID);
+                %>
+                <article>
+                    <section class="datosproducto">
+                        <img src="<%=product.getImageURL()%>" alt="" height="100px" width="100px">
+                        <div class="nombreProducto">
+                            <h2><%=product.getName()%></h2>
+                        </div>
+
+                    </section>
+                    <section class="informacionadicional">
+                        <p><%=String.format("%.2f", product.getPrice())%>€</p>
+                        <p><%=ammounts.next()%></p>
+                    </section>
+                </article>
+            <%}%>
+            </ul>
+            <%}Connector.close();%>
+            <%if (orders.isEmpty()) {%>
+            <h1 class="prompt">No hay ningún pedido en proceso ahora mismo.</h1>
+            <%}%>
         
             <div id="flechayboton">
                 <a href="#" class="volver" onclick="window.location.href='Admin.jsp'" >
@@ -35,6 +76,8 @@
                         <span></span>
                     </div>
                 </a>
+                
+                
         </main>
     </body>
 </html>

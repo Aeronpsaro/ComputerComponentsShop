@@ -65,7 +65,7 @@
             <%}%>
             </ul>
             <%}Connector.close();%>
-            <%if (userID<0) {%>
+            <%if (userID == -1) {%>
             <h1 class="prompt">Usted no se ha autenticado. Para ver sus pedidos, <a href="login.jsp">inicie sesión</a>.</h1>
             <%} else if (orders.isEmpty()) {%>
             <h1 class="prompt">No hay ningún pedido en proceso ahora mismo. <a href="Catalogue.jsp">Compre algo</a>.</h1>
