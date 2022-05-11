@@ -41,7 +41,7 @@
 
                             <div class="social">
                                     <a href="https://www.facebook.com/"><img src="img/facebook.png" alt="facebook"></a>
-                                    <a href="https://twitter.com/?lang=es"><img src="img/gorjeo.png" alt="twitter"></a>
+                                    <a href="https://twitter.com/?lang=es"><img src="img/twitter.png" alt="twitter"></a>
                                     <a href="https://www.instagram.com"><img src="img/instagram.png" alt="instagram"></a>
                             </div>
                         </section>
